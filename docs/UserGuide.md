@@ -1,10 +1,10 @@
 ---
 layout: page
-title: User Guide
+title: User Guide - Contacts Address Book (CAB)
 ---
 
-AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
-
+Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
+Users can input via a command line interface and access features that help with contacts management.
 * Table of Contents
 {:toc}
 
@@ -24,10 +24,16 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
+   * **`help`** : Shows the message explaining how to use the system.
+  
    * **`list`** : Lists all contacts.
 
    * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
+   * **`create`** : Creates a new group to the address book.
+   
+   * **`rename`** : Renaming the existing group at the index to another name.
+   
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
    * **`clear`** : Deletes all contacts.
@@ -72,6 +78,37 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
+### Creating a group: `create`
+
+Create a new group to the Contacts Address Book.
+
+Format: `create g/<GROOUP NAME>`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Not spaces comes before or after the group name.
+</div>
+
+Examples:
+* `create g/SUPPLIERS`
+* `create g/CUSTOMERS`
+
+### Rename the group: `rename`
+
+Rename an existing group to another name.
+
+Format: `rename <INDEX> g/<GROOUP NAME>`
+
+Examples:
+* `rename 1 g/SUPPLIERS` Rename the group with index 1 into SUPPLIERS.
+
+### Remark a contact: `remark`
+
+Add remark to an existing person.
+
+Format: `remark <INDEX> r/<DESCRIPTION>`
+
+Examples:
+* `remark 1 r/standard steel supplier` Remark the person with index 1.
 
 ### Adding a person: `add`
 
