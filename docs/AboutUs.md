@@ -11,13 +11,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### WANG WENWEI
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/e0373972.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[homepage](http://https://sg.linkedin.com/in/wang-wenwei-3b37591b7)]
+[[github](https://github.com/e0373972)]
+[[portfolio](team/wenwei.md)]
 
-* Role: Project Advisor
+* Role: Developer
+* Responsibilities: UI
 
 ### Jane Doe
 
