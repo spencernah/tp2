@@ -14,7 +14,7 @@ Users can input via a command line interface and access features that help with 
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+1. Download the latest `addressbook.jar` from [here](https://https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
