@@ -15,7 +15,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 [[homepage](http://https://sg.linkedin.com/in/wang-wenwei-3b37591b7)]
 [[github](https://github.com/e0373972)]
-[[portfolio](team/wenwei.md)]
+[[portfolio](team/e0373972.md)]
 
 * Role: Developer
 * Responsibilities: UI
