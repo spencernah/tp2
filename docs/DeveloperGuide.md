@@ -3,13 +3,20 @@ layout: page
 title: Developer Guide
 ---
 * Table of Contents
-{:toc}
+* *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
+* *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
+* *[Design](DeveloperGuide.md#design)*
+* *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
+* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
+* *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
+* *[Use Cases](DeveloperGuide.md#use-cases)*
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consulation for our tem.
+* Thanks to the project team AY2122S2-TIC4002-F18-1.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -263,7 +270,19 @@ _{Explain here how the data archiving feature will be implemented}_
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+Name: Jason Tan <br>
+Marriage Status: Married <br>
+Age: 32 years old <br>
+Occupation: Supplier <br>
+Hobbies: Sports such as football, tennis and basketball. <br>
+Traits:
+Comfortable with technology. He uses a smartphone and has multiple apps. He has multiple contacts ranging from colleagues to external family members that he wishes to keep in contact with. He also keeps in contact with his clients, and prefers to categorise them.
+
+
+**Value proposition**: 
+
+* manage contacts faster than a typical mouse/GUI driven app
+* track person contact easily
 
 
 ### User stories
@@ -271,9 +290,9 @@ _{Explain here how the data archiving feature will be implemented}_
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 | Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
+| -------- | ------------------------------------------ | ------------------------------ |------------------------------------------------------------------------|
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
+| `* * *`  | user                                       | add a new person               | keep record of the person contact                                      |
 | `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
@@ -285,16 +304,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `Contacts Address Book` and the **Actor** is the `user`, unless specified otherwise)
 
+**Use case: Adding a person**
+1. User keys in person details
+2. CAB records the contact
+3. CAB shows the person added successfully
+4. Data files updated automatically
+
 **Use case: Delete a person**
-
-**MSS**
-
 1.  User requests to list persons
-2.  AddressBook shows a list of persons
+2.  CAB shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+4.  CAB deletes the person
 
-    Use case ends.
 
 **Extensions**
 
