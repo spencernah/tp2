@@ -1,6 +1,6 @@
 ---
 layout: page
-title: User Guide - Contacts Address Book (CAB)
+title: User Guide
 ---
 
 Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
@@ -14,9 +14,9 @@ Users can input via a command line interface and access features that help with 
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `addressbook.jar` from [here](https://https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
+1. Download the latest `contactsaddressbook.jar` from [here](https://https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+1. Copy the file to the folder you want to use as the _home folder_ for your Contacts Address Book.
 
 1. Double-click the file to start the app. The GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
