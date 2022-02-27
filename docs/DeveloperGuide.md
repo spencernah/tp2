@@ -15,7 +15,7 @@ title: Developer Guide
 
 ## **Acknowledgements**
 
-* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consulation for our tem.
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consultation for our team.
 * Thanks to the project team AY2122S2-TIC4002-F18-1.
 
 --------------------------------------------------------------------------------------------------------------------
