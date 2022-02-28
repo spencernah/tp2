@@ -281,8 +281,9 @@ Comfortable with technology. He uses a smartphone and has multiple apps. He has 
 
 **Value proposition**: 
 
-* manage contacts faster than a typical mouse/GUI driven app
-* track person contact easily
+Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br> 
+
+Evolve: Better searchability (search based on certain criteria) Provide alternatives for saving the data file (csv) More options in clearing contacts (clear certain fields or contacts selectively)
 
 
 ### User stories
