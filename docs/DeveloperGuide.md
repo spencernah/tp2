@@ -339,6 +339,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 1. The UI page must load within 2 seconds.
 1. The app is safe to use and able to protect sensitive data.
+1. The app must be able to transfer data from one computer to another easily.
 
 *{More to be added}*
 
