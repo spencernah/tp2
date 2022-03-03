@@ -1,9 +1,18 @@
 package seedu.address.model.group;
 
+/**
+ * Represents a contact group in the address book.
+ */
 public class Group {
 
     private String groupName;
 
+    /**
+     * Set the group name.
+     * s
+     * @param newGroupName The new group name
+     * @return The new group name
+     */
     public Group setGroupName(String newGroupName) {
         this.groupName = newGroupName;
         return this;

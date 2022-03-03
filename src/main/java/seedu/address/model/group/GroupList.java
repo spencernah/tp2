@@ -11,9 +11,10 @@ public class GroupList {
     }
 
     /**
+     * Check the group whether is an existing group.
      *
-     * @param group
-     * @return
+     * @param group The group name to be checked
+     * @return True, if the group existing, otherwise false
      */
     public static boolean hasGroup(Group group) {
         boolean result = false;
@@ -27,11 +28,14 @@ public class GroupList {
         return result;
     }
 
+    /*
+
     /**
      *
      * @param index
      * @return
      */
+    /*
     public static Group getGroup (int index) {
         return groupList.get(index - 1);
     }
@@ -40,6 +44,7 @@ public class GroupList {
      *
      * @return
      */
+    /*
     public static String listGroups() {
         StringBuffer output = new StringBuffer();
 
@@ -51,5 +56,6 @@ public class GroupList {
         return output.toString();
     }
 
+    */
 
 }

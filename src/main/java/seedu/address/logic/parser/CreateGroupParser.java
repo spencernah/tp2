@@ -10,10 +10,12 @@ import seedu.address.model.group.Group;
 public class CreateGroupParser {
 
     /**
+     * Parses the given {@code String} of arguments in the context of the CreateGroupCommand
+     * and returns an CreateGroupCommand object for execution.
      *
-     * @param args xx
-     * @return xx
-     * @throws ParseException xx
+     * @param args The given name of group
+     * @return An CreateGroupCommand object
+     * @throws ParseException If the user input does not conform the expected format
      */
     public CreateGroupCommand parse(String args) throws ParseException {
         requireNonNull(args);
