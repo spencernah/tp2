@@ -10,8 +10,9 @@ public class Remark {
     public final String value;
 
     /**
-     * Set remark
-     * @param remark
+     * The input of remark.
+     *
+     * @param remark The contents of remark
      */
     public Remark(String remark) {
         requireNonNull(remark);

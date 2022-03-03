@@ -9,6 +9,7 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -120,5 +121,18 @@ public class ParserUtil {
             tagSet.add(parseTag(tagName));
         }
         return tagSet;
+    }
+
+    /**
+     *
+     * @param group  xx
+     * @return xx
+     * @throws ParseException xx
+     */
+    public static Group parseGroup(String group) throws ParseException {
+        requireNonNull(group);
+        final Group groupSet = new Group();
+        groupSet.setGroupName(group);
+        return groupSet;
     }
 }
