@@ -33,7 +33,7 @@ Users can input via a command line interface and access features that help with 
    * **`create`** : Creates a new group to the address book.
 
    * **`rename`** : Renaming the existing group at the index to another name.
-   
+  
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
    * **`clear`** : Deletes all contacts.

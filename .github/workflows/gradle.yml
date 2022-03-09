@@ -48,7 +48,7 @@ jobs:
 
       - uses: codecov/codecov-action@v1
         if: runner.os == 'Linux'
+        continue-on-error: ${{ matrix.experimental }}
         with:
           file: ${{ github.workspace }}/build/reports/jacoco/coverage/coverage.xml
           fail_ci_if_error: true
-        continue-on-error: ${{ matrix.experimental }}
