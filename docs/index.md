@@ -8,7 +8,7 @@ title: Contacts Address Book
 
 ![Ui](images/Ui.png)
 
-Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
+Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**
 Users can input via a command line interface and access features that help with contacts management.
 
 * If you are interested in using Contacts Address Book, head over to the [_Quick Start_ section of the **User Guide**](UserGuide.html#quick-start).

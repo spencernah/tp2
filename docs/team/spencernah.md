@@ -5,7 +5,7 @@ title: Spencer's Project Portfolio Page
 
 ### Project: Contacts Address Book
 
-Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
+Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**
 Users can input via a command line interface and access features that help with contacts management.
 
 Given below are my contributions to the project.
@@ -14,7 +14,7 @@ Given below are my contributions to the project.
 
 * **New Feature**: Rename an existing group to another name
 
-* **New Feature**: Assign a person to a group 
+* **New Feature**: Assign a person to a group
 
 * **Code contributed**: [RepoSense link]()
 

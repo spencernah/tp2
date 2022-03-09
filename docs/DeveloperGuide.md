@@ -279,9 +279,9 @@ Traits:
 Comfortable with technology. He uses a smartphone and has multiple apps. He has multiple contacts ranging from colleagues to external family members that he wishes to keep in contact with. He also keeps in contact with his clients, and prefers to categorise them.
 
 
-**Value proposition**: 
+**Value proposition**:
 
-Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br> 
+Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br>
 
 Evolve: Better searchability (search based on certain criteria) Provide alternatives for saving the data file (csv) More options in clearing contacts (clear certain fields or contacts selectively)
 
