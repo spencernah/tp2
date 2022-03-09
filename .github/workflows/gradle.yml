@@ -9,9 +9,7 @@ jobs:
         platform: [ubuntu-latest, macos-latest, windows-latest]
         jdk: [11]
         experimental: [false]
-        include:
-          - jdk: [8]
-            experimental: [true]
+        
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Set up repository
