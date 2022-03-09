@@ -12,7 +12,9 @@ jobs:
           include:
             - jdk: [8]
               experimental: [true]
+
     runs-on: ${{ matrix.platform }}
+
     steps:
       - name: Set up repository
         uses: actions/checkout@main
@@ -55,7 +57,4 @@ jobs:
           file: ${{ github.workspace }}/build/reports/jacoco/coverage/coverage.xml
           fail_ci_if_error: true
         continue-on-error: ${{ matrix.experimental }}
-
-
-
 
