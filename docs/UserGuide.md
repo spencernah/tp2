@@ -3,7 +3,7 @@ layout: page
 title: User Guide
 ---
 
-Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
+Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**
 Users can input via a command line interface and access features that help with contacts management.
 * Table of Contents
 {:toc}
@@ -25,15 +25,15 @@ Users can input via a command line interface and access features that help with 
    Some example commands you can try:
 
    * **`help`** : Shows the message explaining how to use the system.
-  
+
    * **`list`** : Lists all contacts.
 
    * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
    * **`create`** : Creates a new group to the address book.
-   
+
    * **`rename`** : Renaming the existing group at the index to another name.
-   
+  
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
    * **`clear`** : Deletes all contacts.
