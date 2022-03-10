@@ -82,7 +82,7 @@ Format: `help`
 
 Create a new group to the Contacts Address Book.
 
-Format: `create g/<GROOUP NAME>`
+Format: `create g/<GROUP NAME>`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Not spaces comes before or after the group name.
@@ -96,7 +96,7 @@ Examples:
 
 Rename an existing group to another name.
 
-Format: `rename <INDEX> g/<GROOUP NAME>`
+Format: `rename <INDEX> g/<GROUP NAME>`
 
 Examples:
 * `rename 1 g/SUPPLIERS` Rename the group with index 1 into SUPPLIERS.
