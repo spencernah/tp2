@@ -11,6 +11,8 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.group.Group;
+import seedu.address.model.group.GroupList;
 import seedu.address.model.person.Person;
 
 /**
@@ -126,6 +128,18 @@ public class ModelManager implements Model {
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
         filteredPersons.setPredicate(predicate);
+    }
+
+    @Override
+    public boolean hasGroup(Group toAdd) {
+        requireNonNull(toAdd);
+        return GroupList.hasGroup(toAdd);
+    }
+
+    @Override
+    public void addGroup(Group toAdd) {
+        requireNonNull(toAdd);
+        GroupList.addGroup(toAdd);
     }
 
     @Override

@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import seedu.address.model.group.Group;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -22,18 +23,22 @@ public class Person {
 
     // Data fields
     private final Address address;
+    private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
+    private Group group = new Group();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags, Group group) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.remark = remark;
         this.tags.addAll(tags);
+        this.group.setGroupName(group.toString());
     }
 
     public Name getName() {
@@ -50,6 +55,18 @@ public class Person {
 
     public Address getAddress() {
         return address;
+    }
+
+    public Remark getRemark() {
+        return remark;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group.setGroupName(group.toString());
     }
 
     /**
@@ -92,13 +109,14 @@ public class Person {
                 && otherPerson.getPhone().equals(getPhone())
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
-                && otherPerson.getTags().equals(getTags());
+                && otherPerson.getTags().equals(getTags())
+                && otherPerson.getGroup().equals(getGroup());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, address, tags, group);
     }
 
     @Override
@@ -110,13 +128,17 @@ public class Person {
                 .append("; Email: ")
                 .append(getEmail())
                 .append("; Address: ")
-                .append(getAddress());
+                .append(getAddress())
+                .append(" Remark: ")
+                .append(getRemark());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
             builder.append("; Tags: ");
             tags.forEach(builder::append);
         }
+        builder.append("; Group: ")
+                .append(getGroup().toString());
         return builder.toString();
     }
 

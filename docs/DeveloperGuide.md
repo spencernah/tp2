@@ -3,13 +3,20 @@ layout: page
 title: Developer Guide
 ---
 * Table of Contents
-{:toc}
+* *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
+* *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
+* *[Design](DeveloperGuide.md#design)*
+* *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
+* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
+* *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
+* *[Use Cases](DeveloperGuide.md#use-cases)*
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consultation for our team.
+* Thanks to the project team AY2122S2-TIC4002-F18-1.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -23,7 +30,7 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 <div markdown="span" class="alert alert-primary">
 
-:bulb: **Tip:** The `.puml` files used to create diagrams in this document can be found in the [diagrams](https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/) folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
+:bulb: **Tip:** The `.puml` files used to create diagrams in this document can be found in the [diagrams](https://github.com/AY2122S2-TIC4002-F18-1/tp2/tree/master/docs/diagrams/) folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
 </div>
 
 ### Architecture
@@ -36,7 +43,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** has two classes called [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java). It is responsible for,
+**`Main`** has two classes called [`Main`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/MainApp.java). It is responsible for,
 * At app launch: Initializes the components in the correct sequence, and connects them up with each other.
 * At shut down: Shuts down the components and invokes cleanup methods where necessary.
 
@@ -69,7 +76,7 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
@@ -86,7 +93,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -114,7 +121,7 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
 
@@ -135,7 +142,7 @@ The `Model` component,
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2122S2-TIC4002-F18-1/tp2/blob/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
@@ -263,7 +270,20 @@ _{Explain here how the data archiving feature will be implemented}_
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+Name: Jason Tan <br>
+Marriage Status: Married <br>
+Age: 32 years old <br>
+Occupation: Supplier <br>
+Hobbies: Sports such as football, tennis and basketball. <br>
+Traits:
+Comfortable with technology. He uses a smartphone and has multiple apps. He has multiple contacts ranging from colleagues to external family members that he wishes to keep in contact with. He also keeps in contact with his clients, and prefers to categorise them.
+
+
+**Value proposition**:
+
+Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br>
+
+Evolve: Better searchability (search based on certain criteria) Provide alternatives for saving the data file (csv) More options in clearing contacts (clear certain fields or contacts selectively)
 
 
 ### User stories
@@ -271,9 +291,9 @@ _{Explain here how the data archiving feature will be implemented}_
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 | Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
+| -------- | ------------------------------------------ | ------------------------------ |------------------------------------------------------------------------|
 | `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
+| `* * *`  | user                                       | add a new person               | keep record of the person contact                                      |
 | `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
 | `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
@@ -283,18 +303,20 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `Contacts Address Book` and the **Actor** is the `user`, unless specified otherwise)
+
+**Use case: Adding a person**
+1. User keys in person details
+2. CAB records the contact
+3. CAB shows the person added successfully
+4. Data files updated automatically
 
 **Use case: Delete a person**
-
-**MSS**
-
 1.  User requests to list persons
-2.  AddressBook shows a list of persons
+2.  CAB shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+4.  CAB deletes the person
 
-    Use case ends.
 
 **Extensions**
 
@@ -312,9 +334,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
+1. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+1. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1. The UI page must load within 2 seconds.
+1. The app is safe to use and able to protect sensitive data.
+1. The app must be able to transfer data from one computer to another easily.
 
 *{More to be added}*
 
