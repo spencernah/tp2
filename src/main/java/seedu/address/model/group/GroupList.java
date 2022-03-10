@@ -28,14 +28,11 @@ public class GroupList {
         return result;
     }
 
-    /*
-
     /**
      *
      * @param index
      * @return
      */
-    /*
     public static Group getGroup (int index) {
         return groupList.get(index - 1);
     }
@@ -44,7 +41,6 @@ public class GroupList {
      *
      * @return
      */
-    /*
     public static String listGroups() {
         StringBuffer output = new StringBuffer();
 
@@ -56,6 +52,6 @@ public class GroupList {
         return output.toString();
     }
 
-    */
+
 
 }
