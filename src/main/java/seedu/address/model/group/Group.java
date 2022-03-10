@@ -1,7 +1,6 @@
 package seedu.address.model.group;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a contact group in the address book.
@@ -10,7 +9,7 @@ public class Group {
 
     private String groupName;
 
-    public Group(){
+    public Group() {
         groupName = "groupless";
     };
 

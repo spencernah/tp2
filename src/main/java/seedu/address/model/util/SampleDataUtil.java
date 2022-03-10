@@ -70,11 +70,11 @@ public class SampleDataUtil {
      * Returns a tag set containing the list of strings given.
      */
     public static ArrayList<Group> getGroups(String... strings) {
-         List<Group> groups = Arrays.stream(strings)
+        List<Group> groups = Arrays.stream(strings)
                 .map(Group::new)
                 .collect(Collectors.toList());
-         ArrayList<Group> groupList = new ArrayList<Group>(groups);
-         return groupList;
+        ArrayList<Group> groupList = new ArrayList<Group>(groups);
+        return groupList;
     }
 
 }

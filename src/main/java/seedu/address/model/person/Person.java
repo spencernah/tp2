@@ -2,7 +2,11 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 import seedu.address.model.group.Group;
 import seedu.address.model.tag.Tag;
@@ -27,7 +31,8 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags, ArrayList<Group>  groups) {
+    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags,
+                  ArrayList<Group> groups) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
@@ -122,9 +127,11 @@ public class Person {
                 .append("; Email: ")
                 .append(getEmail())
                 .append("; Address: ")
-                .append(getAddress())
-                .append("; Remark: ")
-                .append(getRemark());
+                .append(getAddress());
+        if (getRemark().equals("")) {
+            builder.append("; Remark: ")
+                 .append(getRemark());
+        }
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
@@ -132,7 +139,7 @@ public class Person {
             tags.forEach(builder::append);
         }
 
-        if(!groups.isEmpty()) {
+        if (!groups.isEmpty()) {
             builder.append("; Group: ");
             groups.forEach(builder::append);
         }
