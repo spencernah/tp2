@@ -1,5 +1,6 @@
 package seedu.address.testutil;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class PersonBuilder {
     private Address address;
     private Remark remark;
     private Set<Tag> tags;
-    private Group group;
+    private ArrayList<Group> groups;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -43,7 +44,7 @@ public class PersonBuilder {
         address = new Address(DEFAULT_ADDRESS);
         remark = new Remark(DEFAULT_REMARK);
         tags = new HashSet<>();
-        group = new Group().setGroupName(DEFAULT_GROUP);
+        groups = new ArrayList<>();
     }
 
     /**
@@ -56,7 +57,7 @@ public class PersonBuilder {
         address = personToCopy.getAddress();
         remark = personToCopy.getRemark();
         tags = new HashSet<>(personToCopy.getTags());
-        group = new Group().setGroupName(personToCopy.getGroup().toString());
+        groups = personToCopy.getGroups();
     }
 
     /**
@@ -107,8 +108,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Parses the {@code group} into a {@code ArrayList<Group} and set it to the {@code Person} that we are building.
+     */
+    public PersonBuilder withGroup(String... groups) {
+        this.groups = SampleDataUtil.getGroups(groups);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, email, address, remark, tags, group);
+        return new Person(name, phone, email, address, remark, tags, groups);
     }
 
 }

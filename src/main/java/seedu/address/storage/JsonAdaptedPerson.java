@@ -32,7 +32,7 @@ class JsonAdaptedPerson {
     private final String address;
     private final String remark;
     private final List<JsonAdaptedTag> tagged = new ArrayList<>();
-    private final String group;
+    private final List<JsonAdaptedGroup> groups = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -41,7 +41,7 @@ class JsonAdaptedPerson {
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("address") String address,
             @JsonProperty("remark") String remark, @JsonProperty("tagged") List<JsonAdaptedTag> tagged,
-                             @JsonProperty("group") String group) {
+                             @JsonProperty("group") List<JsonAdaptedGroup> groups) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -50,7 +50,9 @@ class JsonAdaptedPerson {
         if (tagged != null) {
             this.tagged.addAll(tagged);
         }
-        this.group = group;
+        if (groups != null) {
+            this.groups.addAll(groups);
+        }
     }
 
     /**
@@ -65,7 +67,9 @@ class JsonAdaptedPerson {
         tagged.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
-        group = source.getGroup().toString();
+        groups.addAll(source.getGroups().stream()
+                .map(JsonAdaptedGroup::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -78,6 +82,10 @@ class JsonAdaptedPerson {
         for (JsonAdaptedTag tag : tagged) {
             personTags.add(tag.toModelType());
         }
+
+        final ArrayList<Group> personGroup = new ArrayList<>();
+
+
 
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
@@ -118,9 +126,11 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
 
-        final Group modelGroup = new Group().setGroupName(group);
+        for (JsonAdaptedGroup group : groups) {
+            personGroup.add(group.toModelTypeGroup());
+        }
 
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelRemark, modelTags, modelGroup);
+        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelRemark, modelTags, personGroup);
     }
 
 }

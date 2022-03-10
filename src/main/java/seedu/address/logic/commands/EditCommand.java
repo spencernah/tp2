@@ -8,6 +8,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -101,7 +102,7 @@ public class EditCommand extends Command {
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Remark updatedRemark = personToEdit.getRemark(); // edit command does not allow editing remarks
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
-        Group updatedGroup = editPersonDescriptor.getGroup().orElse(personToEdit.getGroup());
+        ArrayList<Group> updatedGroup = editPersonDescriptor.getGroups().orElse(personToEdit.getGroups());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress,
                 updatedRemark, updatedTags, updatedGroup);
@@ -135,7 +136,7 @@ public class EditCommand extends Command {
         private Email email;
         private Address address;
         private Set<Tag> tags;
-        private Group group;
+        private ArrayList<Group> groups;
 
         public EditPersonDescriptor() {
         }
@@ -150,14 +151,14 @@ public class EditCommand extends Command {
             setEmail(toCopy.email);
             setAddress(toCopy.address);
             setTags(toCopy.tags);
-            setGroup(toCopy.group);
+            setGroup(toCopy.groups);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags, group);
+            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags, groups);
         }
 
         public void setName(Name name) {
@@ -192,12 +193,12 @@ public class EditCommand extends Command {
             return Optional.ofNullable(address);
         }
 
-        public void setGroup(Group group) {
-            this.group = group;
+        public void setGroup(ArrayList<Group> group) {
+            this.groups = group;
         }
 
-        public Optional<Group> getGroup() {
-            return Optional.ofNullable(group);
+        public Optional<ArrayList<Group>> getGroups() {
+            return Optional.ofNullable(groups);
         }
 
         /**
