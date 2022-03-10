@@ -27,10 +27,16 @@ Users can input via a command line interface and access features that help with 
    * **`help`** : Shows the message explaining how to use the system.
 
    * **`list`** : Lists all contacts.
+   
+   * **`listgn`** : Lists all the group.
+   
+   * **`listpfg`** `g/GROUPNAME` : Lists all person from the group.
 
    * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
-   * **`create`** : Creates a new group to the address book.
+   * **`create`** `g/GROUPNAME` : Creates a new group to the address book.
+   
+   * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign person to a group.
 
    * **`rename`** : Renaming the existing group at the index to another name.
   
