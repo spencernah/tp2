@@ -2,10 +2,7 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import seedu.address.model.group.Group;
 import seedu.address.model.tag.Tag;
@@ -25,12 +22,12 @@ public class Person {
     private final Address address;
     private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
-    private Group group = new Group();
+    private ArrayList<Group> groups = new ArrayList<Group>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags, Group group) {
+    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags, ArrayList<Group>  groups) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
@@ -38,7 +35,7 @@ public class Person {
         this.address = address;
         this.remark = remark;
         this.tags.addAll(tags);
-        this.group.setGroupName(group.toString());
+        this.groups = groups;
     }
 
     public Name getName() {
@@ -61,13 +58,10 @@ public class Person {
         return remark;
     }
 
-    public Group getGroup() {
-        return group;
+    public ArrayList<Group> getGroups() {
+        return groups;
     }
 
-    public void setGroup(Group group) {
-        this.group.setGroupName(group.toString());
-    }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
@@ -110,13 +104,13 @@ public class Person {
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
                 && otherPerson.getTags().equals(getTags())
-                && otherPerson.getGroup().equals(getGroup());
+                && otherPerson.getGroups().equals(getGroups());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags, group);
+        return Objects.hash(name, phone, email, address, tags, groups);
     }
 
     @Override
@@ -129,7 +123,7 @@ public class Person {
                 .append(getEmail())
                 .append("; Address: ")
                 .append(getAddress())
-                .append(" Remark: ")
+                .append("; Remark: ")
                 .append(getRemark());
 
         Set<Tag> tags = getTags();
@@ -137,8 +131,12 @@ public class Person {
             builder.append("; Tags: ");
             tags.forEach(builder::append);
         }
-        builder.append("; Group: ")
-                .append(getGroup().toString());
+
+        if(!groups.isEmpty()) {
+            builder.append("; Group: ");
+            groups.forEach(builder::append);
+        }
+
         return builder.toString();
     }
 
