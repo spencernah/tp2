@@ -32,7 +32,9 @@ public class JsonAdaptedPersonTest {
     private static final List<JsonAdaptedTag> VALID_TAGS = BENSON.getTags().stream()
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
-    private static final String VALID_GROUP = BENSON.getGroup().toString();
+    private static final List<JsonAdaptedGroup> VALID_GROUP = BENSON.getGroups().stream()
+            .map(JsonAdaptedGroup::new)
+            .collect(Collectors.toList());
 
     @Test
     public void toModelType_validPersonDetails_returnsPerson() throws Exception {
