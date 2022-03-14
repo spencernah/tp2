@@ -290,14 +290,15 @@ Evolve: Better searchability (search based on certain criteria) Provide alternat
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ |------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               | keep record of the person contact                                      |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                    | So that I can…​                                                        |
+| -------- | ------------------------------------------ |---------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user                                   | see usage instructions          | refer to instructions when I forget how to use the App                 |
+| `* * *`  | user                                       | add a new person                | keep record of the person contact                                      |
+| `* * *`  | user                                       | delete a person                 | remove entries that I no longer need                                   |
+| `* * *`  | user                                       | create different contact groups | sort the contacts into groups for different purposes need              |
+| `* * *`  | user                                       | find a person by name           | locate details of persons without having to go through the entire list |
+| `* *`    | user                                       | hide private contact details    | minimize chance of someone else seeing them by accident                |
+| `*`      | user with many persons in the address book | sort persons by name            | locate a person easily                                                 |
 
 *{More to be added}*
 
@@ -317,6 +318,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  User requests to delete a specific person in the list
 4.  CAB deletes the person
 
+**Use case: Creating a group**
+1. User keys in the name of group
+2. CAB records group name
+3. CAB shows the group added successfully
+4. Data files updated automatically
 
 **Extensions**
 

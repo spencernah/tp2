@@ -1,6 +1,5 @@
 package seedu.address.testutil;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,7 +23,7 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
-    public static final String DEFAULT_GROUP = "CAB";
+    public static final String DEFAULT_GROUP = "N/A";
 
     private Name name;
     private Phone phone;
@@ -32,7 +31,7 @@ public class PersonBuilder {
     private Address address;
     private Remark remark;
     private Set<Tag> tags;
-    private ArrayList<Group> groups;
+    private Group group;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -44,7 +43,7 @@ public class PersonBuilder {
         address = new Address(DEFAULT_ADDRESS);
         remark = new Remark(DEFAULT_REMARK);
         tags = new HashSet<>();
-        groups = new ArrayList<>();
+        group = new Group().setGroupName(DEFAULT_GROUP);
     }
 
     /**
@@ -57,7 +56,7 @@ public class PersonBuilder {
         address = personToCopy.getAddress();
         remark = personToCopy.getRemark();
         tags = new HashSet<>(personToCopy.getTags());
-        groups = personToCopy.getGroups();
+        group = new Group().setGroupName(DEFAULT_GROUP);
     }
 
     /**
@@ -109,15 +108,16 @@ public class PersonBuilder {
     }
 
     /**
-     * Parses the {@code group} into a {@code ArrayList<Group} and set it to the {@code Person} that we are building.
+     * Sets the {@code Group} of the {@code Person} that we are building.
      */
-    public PersonBuilder withGroup(String... groups) {
-        this.groups = SampleDataUtil.getGroups(groups);
+    public PersonBuilder withGroup(String group) {
+        this.group = new Group();
+        this.group.setGroupName(group);
         return this;
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, remark, tags, groups);
+        return new Person(name, phone, email, address, remark, tags, group);
     }
 
 }

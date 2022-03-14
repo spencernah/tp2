@@ -1,3 +1,4 @@
+
 package seedu.address.storage;
 
 //import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,7 +30,8 @@ public class JsonSerializableAddressBookTest {
         AddressBook typicalPersonsAddressBook = TypicalPersons.getTypicalAddressBook();
         assertEquals(addressBookFromFile, typicalPersonsAddressBook);
     }
-     */
+
+    */
 
 
     @Test
@@ -48,3 +50,4 @@ public class JsonSerializableAddressBookTest {
     }
 
 }
+

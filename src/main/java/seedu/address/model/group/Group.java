@@ -1,7 +1,5 @@
 package seedu.address.model.group;
 
-import static java.util.Objects.requireNonNull;
-
 /**
  * Represents a contact group in the address book.
  */
@@ -9,23 +7,9 @@ public class Group {
 
     private String groupName;
 
-    public Group() {
-        groupName = "groupless";
-    };
-
-    /**
-     * Constructs a {@code Group}.
-     *
-     * @param groupName A valid group name.
-     */
-    public Group(String groupName) {
-        requireNonNull(groupName);
-        this.groupName = groupName;
-    }
-
     /**
      * Set the group name.
-     * s
+     *
      * @param newGroupName The new group name
      * @return The new group name
      */
