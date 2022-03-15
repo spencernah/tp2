@@ -1,11 +1,13 @@
 package seedu.address.model;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.group.Group;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 
 /**
@@ -16,6 +18,13 @@ public interface Model {
      * {@code Predicate} that always evaluate to true
      */
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
+
+    /**
+     * {@code Predicate} that always evaluate to true
+     */
+    public static Predicate<Person> predicateShowAllPersonsInGroup(Group group) {
+        return p -> p.getGroup().equals(group);
+    }
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
@@ -70,12 +79,26 @@ public interface Model {
 
     /**
      * Adds the given person.
+     *
      * {@code person} must not already exist in the address book.
      */
     void addPerson(Person person);
 
     /**
+     * get the person through its name.
+     * {@code person} must already exist in the address book.
+     */
+    Person getPerson(Name personName);
+
+    /**
+     * assign person to a group its name.
+     * {@code person} must already exist in the address book.
+     */
+    void assignToGroup(Group group, Person person);
+
+    /**
      * Replaces the given person {@code target} with {@code editedPerson}.
+     *
      * {@code target} must exist in the address book.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
      */
@@ -93,8 +116,37 @@ public interface Model {
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
 
+    /**
+     * Counts the filter of the filtered person list to filter by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    int countPersonInGroup(Predicate<Person> predicate);
+
+    /**
+     * Returns true if a group with the same identity as {@code group} exists in the address book.
+     */
     boolean hasGroup(Group toAdd);
 
+    /**
+     * Adds the given group.
+     *
+     * {@code toAdd group} must not already exist in the address book.
+     */
     void addGroup(Group toAdd);
+
+    /**
+     * return the group at the index i in the group list.
+     * {@code i} an int index .
+     */
+    void renameGroup(int i, String name);
+
+    /**
+     * get the group size of group list.
+     */
+    int getGroupSize();
+
+    ArrayList<Person> getPersonListInThisGroup(Group group);
+
+    void unAssignToGroup(Person person);
 
 }

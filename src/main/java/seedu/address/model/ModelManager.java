@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -13,6 +14,7 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.GroupList;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 
 /**
@@ -107,6 +109,31 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public Person getPerson(Name personName) {
+        return addressBook.getPerson(personName);
+    }
+
+    @Override
+    public ArrayList<Person> getPersonListInThisGroup(Group group) {
+        return addressBook.getPersonListInThisGroup(group);
+    }
+
+    @Override
+    public void assignToGroup(Group group, Person person) {
+        person.setGroup(group);
+    }
+
+    /**
+     * remove a person from group, replace group with "N/A" indicator
+     * @param person to remove group from
+     */
+    public void unAssignToGroup(Person person) {
+        Group emptyGroup = new Group();
+        emptyGroup.setGroupName("N/A");
+        person.setGroup(emptyGroup);
+    }
+
+    @Override
     public void setPerson(Person target, Person editedPerson) {
         requireAllNonNull(target, editedPerson);
 
@@ -130,6 +157,16 @@ public class ModelManager implements Model {
         filteredPersons.setPredicate(predicate);
     }
 
+    /**
+     * Returns persons in particular group
+     */
+    @Override
+    public int countPersonInGroup(Predicate<Person> predicate) {
+        requireNonNull(predicate);
+        filteredPersons.setPredicate(predicate);
+        return filteredPersons.size();
+    }
+
     @Override
     public boolean hasGroup(Group toAdd) {
         requireNonNull(toAdd);
@@ -140,6 +177,16 @@ public class ModelManager implements Model {
     public void addGroup(Group toAdd) {
         requireNonNull(toAdd);
         GroupList.addGroup(toAdd);
+    }
+
+    @Override
+    public int getGroupSize() {
+        return GroupList.getGroupListSize();
+    }
+
+    @Override
+    public void renameGroup(int i, String name) {
+        GroupList.getGroup(i).setGroupName(name);
     }
 
     @Override
