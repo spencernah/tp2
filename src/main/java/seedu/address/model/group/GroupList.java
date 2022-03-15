@@ -4,18 +4,19 @@ import java.util.ArrayList;
 
 public class GroupList {
 
-    private static ArrayList<Group> listGroup = new ArrayList<>();
+    private static ArrayList<Group> groupList = new ArrayList<>();
 
     GroupList() {
+
         Group defaultGroup = new Group();
         defaultGroup.setGroupName("N/A");
 
         addGroup(defaultGroup);
-        assert !listGroup.isEmpty();
+        assert !groupList.isEmpty();
     }
 
     public static void addGroup (Group group) {
-        listGroup.add(group);
+        groupList.add(group);
     }
 
     /**
@@ -25,8 +26,8 @@ public class GroupList {
      */
     public static boolean hasGroup (Group group) {
 
-        for (int i = 0; i < listGroup.size(); i++) {
-            if (listGroup.get(i).equals(group)) {
+        for (int i = 0; i < groupList.size(); i++) {
+            if (groupList.get(i).equals(group)) {
                 return true;
             }
         }
@@ -40,7 +41,7 @@ public class GroupList {
      * @param index is the index number starting from 1.
      */
     public static void deleteGroup (int index) {
-        listGroup.remove(index - 1);
+        groupList.remove(index - 1);
     }
 
     /**
@@ -49,14 +50,14 @@ public class GroupList {
      * @param index is the index number starting from 1.
      */
     public static Group getGroup (int index) {
-        return listGroup.get(index - 1);
+        return groupList.get(index - 1);
     }
 
     /**
      * Get all {@code Group}.
      */
     public static ArrayList<Group> getGroupList () {
-        return listGroup;
+        return groupList;
     }
 
     /**
@@ -66,10 +67,10 @@ public class GroupList {
     public static String listGroups () {
         StringBuffer output = new StringBuffer();
 
-        for (int i = 0; i < listGroup.size(); i++) {
-            if (!listGroup.get(i).toString().equals("N/A")) {
+        for (int i = 0; i < groupList.size(); i++) {
+            if (!groupList.get(i).toString().equals("N/A")) {
                 output.append(i);
-                output.append(". " + listGroup.get(i).toString());
+                output.append(". " + groupList.get(i).toString());
                 output.append(System.lineSeparator());
             }
         }
@@ -77,7 +78,7 @@ public class GroupList {
     }
 
     public static int getGroupListSize() {
-        return listGroup.size();
+        return groupList.size();
     }
 
 }
