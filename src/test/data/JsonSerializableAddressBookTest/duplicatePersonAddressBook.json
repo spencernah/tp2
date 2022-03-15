@@ -14,5 +14,8 @@
     "address": "4th street",
     "remark" : "",
     "group" : null
+  } ],
+  "groups" : [ {
+    "group" : "N/A"
   } ]
 }

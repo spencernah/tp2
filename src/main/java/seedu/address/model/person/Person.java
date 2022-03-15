@@ -2,13 +2,14 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.model.group.Group;
+//import seedu.address.model.group.GroupList;
+import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -26,21 +27,25 @@ public class Person {
     private final Address address;
     private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
-    private ArrayList<Group> groups = new ArrayList<Group>();
+    private Group group = new Group();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags,
-                  ArrayList<Group> groups) {
-        requireAllNonNull(name, phone, email, address, tags);
+                  Group group) throws GroupNotFoundException {
+        requireAllNonNull(name, phone, email, address, tags, group);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.remark = remark;
         this.tags.addAll(tags);
-        this.groups = groups;
+        //if (!GroupList.hasGroup(group) && !group.toString().equals("N/A")) {
+        //throw new GroupNotFoundException("The group is not exist");
+        //}
+        //assert GroupList.hasGroup(group) || group.toString().equals("N/A");
+        this.group.setGroupName(group.toString());
     }
 
     public Name getName() {
@@ -63,8 +68,12 @@ public class Person {
         return remark;
     }
 
-    public ArrayList<Group> getGroups() {
-        return groups;
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group.setGroupName(group.toString());
     }
 
 
@@ -109,13 +118,13 @@ public class Person {
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
                 && otherPerson.getTags().equals(getTags())
-                && otherPerson.getGroups().equals(getGroups());
+                && otherPerson.getGroup().equals(getGroup());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags, groups);
+        return Objects.hash(name, phone, email, address, tags, group);
     }
 
     @Override
@@ -139,10 +148,7 @@ public class Person {
             tags.forEach(builder::append);
         }
 
-        if (!groups.isEmpty()) {
-            builder.append("; Group: ");
-            groups.forEach(builder::append);
-        }
+        builder.append("; Group: ").append(getGroup().toString());
 
         return builder.toString();
     }
