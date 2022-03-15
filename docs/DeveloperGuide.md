@@ -334,6 +334,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3. CAB shows the person assigned to the group successfully
 4. Data files updated automatically
 
+**Use case: List all person in a group**
+1. User requests to list all the person in a group
+2. CAB shows a list of person from the group
+
 **Extensions**
 
 * 2a. The list is empty.

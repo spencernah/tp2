@@ -22,7 +22,7 @@ public interface Model {
     /**
      * {@code Predicate} that always evaluate to true
      */
-    public static Predicate<Person> predicateShowAllPersonsInGroup(Group group) {
+    static Predicate<Person> predicateShowAllPersonsInGroup(Group group) {
         return p -> p.getGroup().equals(group);
     }
 
