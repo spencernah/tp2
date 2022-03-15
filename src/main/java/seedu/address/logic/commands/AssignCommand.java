@@ -5,6 +5,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
@@ -22,6 +28,7 @@ public class AssignCommand extends Command {
     public static final String MESSAGE_NO_EXIST_GROUP = "%2$s is not in the address book. ";
     public static final String MESSAGE_NO_EXIST_PERSON = "%1$s is not in the address book. ";
 
+    private static Logger logger = Logger.getLogger("ASSIGN");
     private final Group group;
     private final Name name;
 
@@ -41,6 +48,19 @@ public class AssignCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+
+        FileHandler fh;
+
+        try {
+            fh = new FileHandler("./log/AssignToGroup.log");
+            logger.addHandler(fh);
+            logger.setUseParentHandlers(false);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.log(Level.INFO, "System start to assign the person to the group");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (!model.hasGroup(this.group)) {
             throw new CommandException(MESSAGE_NO_EXIST_GROUP);
