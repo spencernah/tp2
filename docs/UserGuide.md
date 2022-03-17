@@ -191,11 +191,11 @@ Clears all entries from the address book.
 
 Format: `clear`
 
-### Exiting the program : `exit`
+### Exiting the program : `exit`\ `bye` \ `quit`
 
 Exits the program.
 
-Format: `exit`
+Format: `exit` OR 'bye' OR 'quit'
 
 ### Saving the data
 
