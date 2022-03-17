@@ -38,7 +38,7 @@ Users can input via a command line interface and access features that help with 
    
    * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign person to a group.
 
-   * **`rename`** : Renaming the existing group at the index to another name.
+   * **`rename`** : Renaming the existing group at the index to another name. (coming soon)
   
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
