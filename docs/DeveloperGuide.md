@@ -298,6 +298,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | user                                       | create different contact groups | sort the contacts into groups for different purposes need              |
 | `* * *`  | user                                       | find a person by name           | locate details of persons without having to go through the entire list |
 | `* *`    | user                                       | hide private contact details    | minimize chance of someone else seeing them by accident                |
+| `* *`    | linux user                                 | close the program using keywords like quit  | it is similar to most of the exit command I used.          |
 | `*`      | user with many persons in the address book | sort persons by name            | locate a person easily                                                 |
 
 *{More to be added}*
