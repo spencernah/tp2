@@ -31,7 +31,6 @@ public class FavouriteCommand extends Command {
     public static final String MESSAGE_DELETE_FAVOURITE_SUCCESS = "Removed Favourite from Person: %1$s";
 
     private final Index index;
-    private final Favourite favourite = new Favourite(true);;
 
     /**
      * @param index  of the person in the filtered person list to edit the remark
@@ -53,6 +52,7 @@ public class FavouriteCommand extends Command {
         }
 
         Person personToEdit = lastShownList.get(index.getZeroBased());
+        Favourite favourite = new Favourite(!personToEdit.getFavourite().getBoolean());
         Person editedPerson = new Person(
                 personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                 personToEdit.getAddress(), personToEdit.getRemark(), personToEdit.getTags(),
@@ -61,7 +61,11 @@ public class FavouriteCommand extends Command {
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
-        return new CommandResult(String.format(MESSAGE_ADD_FAVOURITE_SUCCESS, personToEdit));
+        if (!favourite.getBoolean()){
+            return new CommandResult(String.format(MESSAGE_DELETE_FAVOURITE_SUCCESS , personToEdit));
+        }
+
+        return new CommandResult(String.format(MESSAGE_ADD_FAVOURITE_SUCCESS , personToEdit));
     }
 
 
@@ -80,7 +84,6 @@ public class FavouriteCommand extends Command {
 
         // state check
         FavouriteCommand e = (FavouriteCommand) other;
-        return index.equals(e.index)
-                && favourite.equals(e.favourite);
+        return index.equals(e.index);
     }
 }

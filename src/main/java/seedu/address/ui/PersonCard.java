@@ -61,7 +61,7 @@ public class PersonCard extends UiPart<Region> {
         remark.setText(person.getRemark().value);
         if (person.getFavourite().favourite) {
             favourite.setText("Favourite");
-        } else if (person.getFavourite().favourite) {
+        } else if (!person.getFavourite().favourite) {
             favourite.setText("");
         }
         person.getTags().stream()

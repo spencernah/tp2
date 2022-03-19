@@ -64,6 +64,7 @@ public class AddressBookParser {
             return new RemarkCommandParser().parse(arguments);
 
         case FavouriteCommand.COMMAND_WORD:
+        case FavouriteCommand.COMMAND_WORD2:
             return new FavouriteCommandParser().parse(arguments);
 
 
