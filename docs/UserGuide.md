@@ -84,38 +84,6 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
-### Creating a group: `create`
-
-Create a new group to the Contacts Address Book.
-
-Format: `create g/<GROUP NAME>`
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-Not spaces comes before or after the group name.
-</div>
-
-Examples:
-* `create g/SUPPLIERS`
-* `create g/CUSTOMERS`
-
-### Rename the group: `rename`
-
-Rename an existing group to another name.
-
-Format: `rename <INDEX> g/<GROUP NAME>`
-
-Examples:
-* `rename 1 g/SUPPLIERS` Rename the group with index 1 into SUPPLIERS.
-
-### Remark a contact: `remark`
-
-Add remark to an existing person.
-
-Format: `remark <INDEX> r/<DESCRIPTION>`
-
-Examples:
-* `remark 1 r/standard steel supplier` Remark the person with index 1.
-
 ### Adding a person: `add`
 
 Adds a person to the address book.
@@ -130,11 +98,36 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
+### Remark a contact: `remark`
+
+Add remark to an existing person.
+
+Format: `remark <INDEX> r/<DESCRIPTION>`
+
+Examples:
+* `remark 1 r/standard steel supplier` Remark the person with index 1.
+
+### Favourite/Unfavourite a contact: `favourite`/`fav`
+
+Add Favourite to an existing person or remove favourite from an existing favourite person.
+
+Format: `favourite <INDEX>` OR `fav <INDEX>`
+
+Examples:
+* `fav 1` favourite/unfavourite the person with index 1.
+
+
 ### Listing all persons : `list`
 
 Shows a list of all persons in the address book.
 
 Format: `list`
+
+### Listing all persons : `listfav`
+
+Shows a list of all persons that was favourite in the address book.
+
+Format: `listfav`
 
 ### Editing a person : `edit`
 
@@ -152,6 +145,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+
 
 ### Locating persons by name: `find`
 
@@ -184,6 +178,31 @@ Format: `delete INDEX`
 Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+
+### Creating a group: `create`
+
+Create a new group to the Contacts Address Book.
+
+Format: `create g/<GROUP NAME>`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Not spaces comes before or after the group name.
+</div>
+
+Examples:
+* `create g/SUPPLIERS`
+* `create g/CUSTOMERS`
+
+### Rename the group: `rename`
+
+Rename an existing group to another name.
+
+Format: `rename <INDEX> g/<GROUP NAME>`
+
+Examples:
+* `rename 1 g/SUPPLIERS` Rename the group with index 1 into SUPPLIERS.
+
+
 
 ### Clearing all entries : `clear`
 
