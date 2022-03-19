@@ -42,7 +42,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
         Remark remark = new Remark(""); // add command does not allow adding remarks straight away
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
-        Favourite favourite = new Favourite(Boolean.FALSE);
+        Favourite favourite = new Favourite(false);
         Group group;
         if (argMultimap.getValue(PREFIX_GROUP).isEmpty()) {
             group = new Group();

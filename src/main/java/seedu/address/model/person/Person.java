@@ -159,7 +159,7 @@ public class Person {
 
         if (getFavourite().equals("")) {
             builder.append("; Favourite: ")
-                    .append(getFavourite());
+                    .append(getFavourite().toString());
         }
 
         return builder.toString();

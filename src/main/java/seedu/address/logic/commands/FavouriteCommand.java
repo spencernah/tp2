@@ -31,7 +31,7 @@ public class FavouriteCommand extends Command {
     public static final String MESSAGE_DELETE_FAVOURITE_SUCCESS = "Removed Favourite from Person: %1$s";
 
     private final Index index;
-    private final Favourite favourite = new Favourite(Boolean.TRUE);;
+    private final Favourite favourite = new Favourite(true);;
 
     /**
      * @param index  of the person in the filtered person list to edit the remark
@@ -80,6 +80,7 @@ public class FavouriteCommand extends Command {
 
         // state check
         FavouriteCommand e = (FavouriteCommand) other;
-        return index.equals(e.index);
+        return index.equals(e.index)
+                && favourite.equals(e.favourite);
     }
 }

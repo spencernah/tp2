@@ -26,8 +26,8 @@ public class Favourite {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Name // instanceof handles nulls
-                && favourite.equals(((Favourite) other).favourite)); // state check
+                || (other instanceof Favourite // instanceof handles nulls
+                && (favourite == ((Favourite) other).favourite)); // state check
     }
 
     @Override

@@ -19,7 +19,7 @@ public class PersonBuilder {
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
     public static final String DEFAULT_GROUP = "N/A";
-    public static final Boolean DEFAULT_FAVOURITE = Boolean.FALSE;
+    public static final Boolean DEFAULT_FAVOURITE = false;
 
     private Name name;
     private Phone phone;
