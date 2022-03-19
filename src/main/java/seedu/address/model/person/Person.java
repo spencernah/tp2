@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.model.group.Group;
-//import seedu.address.model.group.GroupList;
+import seedu.address.model.group.GroupList;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.tag.Tag;
 
@@ -42,10 +42,10 @@ public class Person {
         this.address = address;
         this.remark = remark;
         this.tags.addAll(tags);
-        //if (!GroupList.hasGroup(group) && !group.toString().equals("N/A")) {
-        //throw new GroupNotFoundException("The group is not exist");
-        //}
-        //assert GroupList.hasGroup(group) || group.toString().equals("N/A");
+        if (!GroupList.hasGroup(group) && !group.toString().equals("N/A")) {
+            throw new GroupNotFoundException("The group is not exist");
+        }
+        assert GroupList.hasGroup(group) || group.toString().equals("N/A");
         this.group.setGroupName(group.toString());
         this.favourite = favourite;
     }
