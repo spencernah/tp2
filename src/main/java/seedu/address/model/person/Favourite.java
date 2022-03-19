@@ -2,11 +2,22 @@ package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
 
+
+/**
+ * Represents a Person's Favourite in the address book.
+ *  * Guarantees: immutable; is always valid
+ */
 public class Favourite {
-    public final Boolean favourite;
 
     public static final String MESSAGE_CONSTRAINTS = "Favourite should either be True or False and not NULL";
 
+    public final Boolean favourite;
+
+    /**
+     * Constructs a {@code Favourite}.
+     *
+     * @param favourite A boolean if favourite.
+     */
     public Favourite(Boolean favourite) {
         requireNonNull(favourite);
         this.favourite = favourite;
