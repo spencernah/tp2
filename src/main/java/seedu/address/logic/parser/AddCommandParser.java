@@ -45,21 +45,21 @@ public class AddCommandParser implements Parser<AddCommand> {
                 throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
             }
 
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
-        Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
-        Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
-        Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        Remark remark = new Remark(""); // add command does not allow adding remarks straight away
-        Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
-        Favourite favourite = new Favourite(false);
-        Group group;
-        if (argMultimap.getValue(PREFIX_GROUP).isEmpty()) {
-            group = new Group();
-            group.setGroupName("N/A");
-        } else {
-            group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
-        }
-        Person person = new Person(name, phone, email, address, remark, tagList, group, favourite);
+            Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+            Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
+            Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
+            Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
+            Remark remark = new Remark(""); // add command does not allow adding remarks straight away
+            Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+            Favourite favourite = new Favourite(false);
+            Group group;
+            if (argMultimap.getValue(PREFIX_GROUP).isEmpty()) {
+                group = new Group();
+                group.setGroupName("N/A");
+            } else {
+                group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
+            }
+            Person person = new Person(name, phone, email, address, remark, tagList, group, favourite);
 
 
             return new AddCommand(person);
