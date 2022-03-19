@@ -46,6 +46,7 @@ public class AssignCommand extends Command {
             throw new CommandException(MESSAGE_NO_EXIST_GROUP);
         }
 
+        assert model.hasGroup((this.group));
         Person person = model.getPerson(this.name);
 
         if (person == null || !model.hasPerson(person)) {
