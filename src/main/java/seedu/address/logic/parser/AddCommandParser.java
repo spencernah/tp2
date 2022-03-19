@@ -16,6 +16,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Favourite;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -47,6 +48,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
         Remark remark = new Remark(""); // add command does not allow adding remarks straight away
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+        Favourite favourite = new Favourite(false);
         Group group;
         if (argMultimap.getValue(PREFIX_GROUP).isEmpty()) {
             group = new Group();
@@ -54,7 +56,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         } else {
             group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
         }
-        Person person = new Person(name, phone, email, address, remark, tagList, group);
+        Person person = new Person(name, phone, email, address, remark, tagList, group, favourite);
 
         return new AddCommand(person);
     }

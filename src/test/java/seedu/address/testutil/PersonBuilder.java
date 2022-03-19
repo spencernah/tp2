@@ -6,6 +6,7 @@ import java.util.Set;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Favourite;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -24,6 +25,7 @@ public class PersonBuilder {
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
     public static final String DEFAULT_GROUP = "N/A";
+    public static final Boolean DEFAULT_FAVOURITE = false;
 
     private Name name;
     private Phone phone;
@@ -32,6 +34,7 @@ public class PersonBuilder {
     private Remark remark;
     private Set<Tag> tags;
     private Group group;
+    private Favourite favourite;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -44,6 +47,7 @@ public class PersonBuilder {
         remark = new Remark(DEFAULT_REMARK);
         tags = new HashSet<>();
         group = new Group().setGroupName(DEFAULT_GROUP);
+        favourite = new Favourite(DEFAULT_FAVOURITE);
     }
 
     /**
@@ -57,6 +61,7 @@ public class PersonBuilder {
         remark = personToCopy.getRemark();
         tags = new HashSet<>(personToCopy.getTags());
         group = new Group().setGroupName(DEFAULT_GROUP);
+        favourite = personToCopy.getFavourite();
     }
 
     /**
@@ -116,8 +121,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Group} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withFavourite(Boolean favourite) {
+        this.favourite = new Favourite(favourite);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, email, address, remark, tags, group);
+        return new Person(name, phone, email, address, remark, tags, group, favourite);
     }
 
 }
