@@ -21,7 +21,7 @@ public class DeleteGroupCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1";
 
     public static final String MESSAGE_DELETE_GROUP_SUCCESS = "Deleted the group successfully: %1$s";
-    //public static final String MESSAGE_WARNING = "This index is invalid. Please check";
+    public static final String MESSAGE_WARNING = "This index is invalid. Please check";
 
     private final Index targetIndex;
 
@@ -33,12 +33,12 @@ public class DeleteGroupCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        //if (targetIndex.getOneBased() > (GroupList.getGroupListSize() -1 )) {
+        if (targetIndex.getOneBased() > (GroupList.getGroupListSize() - 1)) {
 
-        //eturn new CommandResult(String.format(MESSAGE_WARNING));
-        //}
+            return new CommandResult(String.format(MESSAGE_WARNING));
+        }
 
-        Group groupName = GroupList.getGroup(targetIndex.getOneBased() + 1 );
+        Group groupName = GroupList.getGroup(targetIndex.getOneBased() + 1);
 
         if (model.countPersonInGroup(Model.predicateShowAllPersonsInGroup(groupName)) > 0) {
             ArrayList<Person> personInGroup = model.getPersonListInThisGroup(groupName);
@@ -49,7 +49,7 @@ public class DeleteGroupCommand extends Command {
             model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
         }
 
-        GroupList.deleteGroup(targetIndex.getOneBased() + 1 );
+        GroupList.deleteGroup(targetIndex.getOneBased() + 1);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_DELETE_GROUP_SUCCESS, groupName.toString()));
     }
