@@ -7,15 +7,20 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.AssignCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CreateGroupCommand;
 import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.DeleteGroupCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FavouriteCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.ListGroupNameCommand;
+import seedu.address.logic.commands.ListPersonFromGroupCommand;
 import seedu.address.logic.commands.RemarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
@@ -49,9 +54,17 @@ public class AddressBookParser {
         case AddCommand.COMMAND_WORD:
             return new AddCommandParser().parse(arguments);
 
-        // Create group
         case CreateGroupCommand.COMMAND_WORD:
             return new CreateGroupParser().parse(arguments);
+
+        case ListGroupNameCommand.COMMAND_WORD:
+            return new ListGroupNameCommand();
+
+        case AssignCommand.COMMAND_WORK:
+            return new AssignCommandParser().parse(arguments);
+
+        case DeleteGroupCommand.COMMAND_WORD:
+            return new DeleteGroupCommandParser().parse(arguments);
 
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
@@ -68,10 +81,21 @@ public class AddressBookParser {
         case RemarkCommand.COMMAND_WORD:
             return new RemarkCommandParser().parse(arguments);
 
+        case FavouriteCommand.COMMAND_WORD:
+        case FavouriteCommand.COMMAND_WORD2:
+            return new FavouriteCommandParser().parse(arguments);
+
+
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
 
+        case ListPersonFromGroupCommand.COMMAND_WORD:
+            return new ListPersonFromGroupCommandParser().parse(arguments);
+
         case ExitCommand.COMMAND_WORD:
+        case ExitCommand.COMMAND_WORD2:
+        case ExitCommand.COMMAND_WORD3:
+        case ExitCommand.COMMAND_WORD4:
             return new ExitCommand();
 
         case HelpCommand.COMMAND_WORD:

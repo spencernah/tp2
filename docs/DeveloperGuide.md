@@ -279,9 +279,9 @@ Traits:
 Comfortable with technology. He uses a smartphone and has multiple apps. He has multiple contacts ranging from colleagues to external family members that he wishes to keep in contact with. He also keeps in contact with his clients, and prefers to categorise them.
 
 
-**Value proposition**: 
+**Value proposition**:
 
-Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br> 
+Morph: Better email management (multiple emails) Expansion of information fields of contacts Better categorisation of Contacts (via tags) <br>
 
 Evolve: Better searchability (search based on certain criteria) Provide alternatives for saving the data file (csv) More options in clearing contacts (clear certain fields or contacts selectively)
 
@@ -290,14 +290,16 @@ Evolve: Better searchability (search based on certain criteria) Provide alternat
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ |------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               | keep record of the person contact                                      |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                    | So that I can…​                                                        |
+| -------- | ------------------------------------------ |---------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user                                   | see usage instructions          | refer to instructions when I forget how to use the App                 |
+| `* * *`  | user                                       | add a new person                | keep record of the person contact                                      |
+| `* * *`  | user                                       | delete a person                 | remove entries that I no longer need                                   |
+| `* * *`  | user                                       | create different contact groups | sort the contacts into groups for different purposes need              |
+| `* * *`  | user                                       | find a person by name           | locate details of persons without having to go through the entire list |
+| `* *`    | user                                       | hide private contact details    | minimize chance of someone else seeing them by accident                |
+| `* *`    | linux user                                 | close the program using keywords like quit  | it is similar to most of the exit command I used.          |
+| `*`      | user with many persons in the address book | sort persons by name            | locate a person easily                                                 |
 
 *{More to be added}*
 
@@ -317,6 +319,25 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  User requests to delete a specific person in the list
 4.  CAB deletes the person
 
+**Use case: Creating a group**
+1. User keys in the name of group
+2. CAB records group name
+3. CAB shows the group added successfully
+4. Data files updated automatically
+
+**Use case: List all the group name**
+1. User requests to list all the groups name
+2. CAB shows a list of groups
+
+**Use case: Assign a person to a group**
+1. User keys in the name and group
+2. CAB assign the person to the group
+3. CAB shows the person assigned to the group successfully
+4. Data files updated automatically
+
+**Use case: List all person in a group**
+1. User requests to list all the person in a group
+2. CAB shows a list of person from the group
 
 **Extensions**
 

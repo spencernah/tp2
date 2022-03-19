@@ -3,7 +3,7 @@ layout: page
 title: User Guide
 ---
 
-Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**  
+Contacts Address Book (CAB) is a **desktop app that manages various contacts with added functionality.**
 Users can input via a command line interface and access features that help with contacts management.
 * Table of Contents
 {:toc}
@@ -25,15 +25,21 @@ Users can input via a command line interface and access features that help with 
    Some example commands you can try:
 
    * **`help`** : Shows the message explaining how to use the system.
-  
+
    * **`list`** : Lists all contacts.
+   
+   * **`listgn`** : Lists all the group.
+   
+   * **`listpfg`** `g/GROUPNAME` : Lists all person from the group.
 
    * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
-   * **`create`** : Creates a new group to the address book.
+   * **`create`** `g/GROUPNAME` : Creates a new group to the address book.
    
-   * **`rename`** : Renaming the existing group at the index to another name.
-   
+   * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign person to a group.
+
+   * **`rename`** : Renaming the existing group at the index to another name. (coming soon)
+  
    * **`delete`**`3` : Deletes the 3rd contact shown in the current list.
 
    * **`clear`** : Deletes all contacts.
@@ -82,7 +88,7 @@ Format: `help`
 
 Create a new group to the Contacts Address Book.
 
-Format: `create g/<GROOUP NAME>`
+Format: `create g/<GROUP NAME>`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Not spaces comes before or after the group name.
@@ -96,7 +102,7 @@ Examples:
 
 Rename an existing group to another name.
 
-Format: `rename <INDEX> g/<GROOUP NAME>`
+Format: `rename <INDEX> g/<GROUP NAME>`
 
 Examples:
 * `rename 1 g/SUPPLIERS` Rename the group with index 1 into SUPPLIERS.
@@ -185,11 +191,11 @@ Clears all entries from the address book.
 
 Format: `clear`
 
-### Exiting the program : `exit`
+### Exiting the program : `exit`\ `bye` \ `quit`
 
 Exits the program.
 
-Format: `exit`
+Format: `exit` OR 'bye' OR 'quit'
 
 ### Saving the data
 

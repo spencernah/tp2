@@ -9,7 +9,7 @@ public class Group {
 
     /**
      * Set the group name.
-     * s
+     *
      * @param newGroupName The new group name
      * @return The new group name
      */

@@ -6,56 +6,79 @@ public class GroupList {
 
     private static ArrayList<Group> groupList = new ArrayList<>();
 
-    public static void addGroup(Group group) {
+    GroupList() {
+
+        Group defaultGroup = new Group();
+        defaultGroup.setGroupName("N/A");
+
+        addGroup(defaultGroup);
+        assert !groupList.isEmpty();
+    }
+
+    public static void addGroup (Group group) {
         groupList.add(group);
     }
 
     /**
-     * Check the group whether is an existing group.
-     *
-     * @param group The group name to be checked
-     * @return True, if the group existing, otherwise false
+     * Check if group already exist in the listGroup
+     * @param group name to be checked
+     * @return true if exist, false otherwise
      */
-    public static boolean hasGroup(Group group) {
-        boolean result = false;
+    public static boolean hasGroup (Group group) {
 
         for (int i = 0; i < groupList.size(); i++) {
             if (groupList.get(i).equals(group)) {
-                result = true;
+                return true;
             }
         }
 
-        return result;
+        return false;
     }
 
-    /*
+    /**
+     * Delete a {@code Group}.
+     *
+     * @param index is the index number starting from 1.
+     */
+    public static void deleteGroup (int index) {
+        groupList.remove(index - 1);
+    }
 
     /**
+     * Get a {@code Group}.
      *
-     * @param index
-     * @return
+     * @param index is the index number starting from 1.
      */
-    /*
     public static Group getGroup (int index) {
         return groupList.get(index - 1);
     }
 
     /**
-     *
-     * @return
+     * Get all {@code Group}.
      */
-    /*
-    public static String listGroups() {
+    public static ArrayList<Group> getGroupList () {
+        return groupList;
+    }
+
+    /**
+     * List all {@code Groups} as String.
+     *
+     */
+    public static String listGroups () {
         StringBuffer output = new StringBuffer();
 
         for (int i = 0; i < groupList.size(); i++) {
-            output.append(i + 1);
-            output.append(". " + groupList.get(i).toString());
-            output.append(System.lineSeparator());
+            if (!groupList.get(i).toString().equals("N/A")) {
+                output.append(i);
+                output.append(". " + groupList.get(i).toString());
+                output.append(System.lineSeparator());
+            }
         }
         return output.toString();
     }
 
-    */
+    public static int getGroupListSize() {
+        return groupList.size();
+    }
 
 }

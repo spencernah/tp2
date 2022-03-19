@@ -22,6 +22,7 @@ import seedu.address.model.Model;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Favourite;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -102,9 +103,10 @@ public class EditCommand extends Command {
         Remark updatedRemark = personToEdit.getRemark(); // edit command does not allow editing remarks
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
         Group updatedGroup = editPersonDescriptor.getGroup().orElse(personToEdit.getGroup());
+        Favourite updatedFavourite = personToEdit.getFavourite(); // favourite can be edited by favourite command
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress,
-                updatedRemark, updatedTags, updatedGroup);
+                updatedRemark, updatedTags, updatedGroup, updatedFavourite);
     }
 
     @Override
@@ -200,6 +202,8 @@ public class EditCommand extends Command {
             return Optional.ofNullable(group);
         }
 
+
+
         /**
          * Sets {@code tags} to this object's {@code tags}.
          * A defensive copy of {@code tags} is used internally.
@@ -238,5 +242,7 @@ public class EditCommand extends Command {
                     && getAddress().equals(e.getAddress())
                     && getTags().equals(e.getTags());
         }
+
+
     }
 }

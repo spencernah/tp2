@@ -22,6 +22,7 @@ import seedu.address.model.tag.Tag;
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
+    public static final String MESSAGE_EMPTY_INPUT = "Group value entered is empty.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -124,15 +125,16 @@ public class ParserUtil {
     }
 
     /**
-     *
-     * @param group  xx
-     * @return xx
-     * @throws ParseException xx
+     * Parses {@code String group} into a {@code Group}.
      */
     public static Group parseGroup(String group) throws ParseException {
-        requireNonNull(group);
+        String checkedGroup = group.trim();
+        if (checkedGroup.isEmpty()) {
+            throw new ParseException(MESSAGE_EMPTY_INPUT);
+        }
+        requireNonNull(checkedGroup);
         final Group groupSet = new Group();
-        groupSet.setGroupName(group);
+        groupSet.setGroupName(checkedGroup);
         return groupSet;
     }
 }
