@@ -6,14 +6,17 @@
     "address": "123, Jurong West Ave 6, #08-111",
     "remark" : "",
     "tagged": [ "friends" ],
-    "group" : "N/A"
+    "group" : "N/A",
+    "favourite" : false
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
     "email": "pauline@example.com",
     "address": "4th street",
     "remark" : "",
-    "group" : "N/A"
+    "group" : "N/A",
+    "favourite" : false
+
   } ],
   "groups" : [ {
     "group" : "N/A"

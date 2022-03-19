@@ -28,13 +28,14 @@ public class Person {
     private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
     private Group group = new Group();
+    private final Favourite favourite;
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags,
-                  Group group) throws GroupNotFoundException {
-        requireAllNonNull(name, phone, email, address, tags, group);
+                  Group group, Favourite favourite) throws GroupNotFoundException {
+        requireAllNonNull(name, phone, email, address, tags, group, favourite);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -46,6 +47,7 @@ public class Person {
         }
         assert GroupList.hasGroup(group) || group.toString().equals("N/A");
         this.group.setGroupName(group.toString());
+        this.favourite = favourite;
     }
 
     public Name getName() {
@@ -70,6 +72,10 @@ public class Person {
 
     public Group getGroup() {
         return group;
+    }
+
+    public Favourite getFavourite() {
+        return favourite;
     }
 
     public void setGroup(Group group) {
@@ -118,13 +124,14 @@ public class Person {
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
                 && otherPerson.getTags().equals(getTags())
-                && otherPerson.getGroup().equals(getGroup());
+                && otherPerson.getGroup().equals(getGroup())
+                && otherPerson.getFavourite().equals(getFavourite());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags, group);
+        return Objects.hash(name, phone, email, address, tags, group, favourite);
     }
 
     @Override
@@ -149,6 +156,11 @@ public class Person {
         }
 
         builder.append("; Group: ").append(getGroup().toString());
+
+        if (getFavourite().equals("")) {
+            builder.append("; Favourite: ")
+                    .append(getFavourite().toString());
+        }
 
         return builder.toString();
     }
