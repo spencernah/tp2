@@ -57,7 +57,7 @@ public class AddCommandParser implements Parser<AddCommand> {
 
             try {
                 group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
-            } catch (NoSuchElementException e ){
+            } catch (NoSuchElementException e) {
                 group = new Group();
                 group.setGroupName("N/A");
             } catch (ParseException e) {

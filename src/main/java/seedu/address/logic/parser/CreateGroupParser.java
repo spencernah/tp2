@@ -35,10 +35,10 @@ public class CreateGroupParser {
         Group group;
         try {
             group = ParserUtil.parseGroup(argumentMultimap.getValue(PREFIX_GROUP).get());
-        } catch (NoSuchElementException e ){
+        } catch (NoSuchElementException e) {
             group = new Group();
             group.setGroupName("N/A");
-        } catch (ParseException e){
+        } catch (ParseException e) {
             throw e;
         }
 

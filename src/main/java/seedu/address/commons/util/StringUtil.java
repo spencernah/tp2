@@ -35,7 +35,8 @@ public class StringUtil {
         String[] wordsInPreppedSentence = preppedSentence.split("\\s+");
 
         return Arrays.stream(wordsInPreppedSentence)
-                .anyMatch(wordInPreppedSentence -> wordInPreppedSentence.toLowerCase().contains(preppedWord.toLowerCase()));
+                .anyMatch(wordInPreppedSentence ->
+                        wordInPreppedSentence.toLowerCase().contains(preppedWord.toLowerCase()));
     }
 
     /**
