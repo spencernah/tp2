@@ -9,7 +9,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 
 
 
-public class FavouriteCommandParser {
+public class FavouriteCommandParser implements Parser<FavouriteCommand> {
 
     /**
      * Parses the given {@code String} of arguments in the context of the DeleteCommand
@@ -19,7 +19,6 @@ public class FavouriteCommandParser {
     public FavouriteCommand parse(String args) throws ParseException {
         try {
             Index index = ParserUtil.parseIndex(args);
-
             return new FavouriteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
