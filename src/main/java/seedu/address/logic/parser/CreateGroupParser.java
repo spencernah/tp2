@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 
+import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.CreateGroupCommand;
@@ -31,9 +32,14 @@ public class CreateGroupParser {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, CreateGroupCommand.MESSAGE_USAGE));
         }
 
-        Group group = null;
-        if (argumentMultimap.getValue(PREFIX_GROUP).isPresent()) {
+        Group group;
+        try {
             group = ParserUtil.parseGroup(argumentMultimap.getValue(PREFIX_GROUP).get());
+        } catch (NoSuchElementException e ){
+            group = new Group();
+            group.setGroupName("N/A");
+        } catch (ParseException e){
+            throw e;
         }
 
         return new CreateGroupCommand(group);

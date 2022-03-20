@@ -5,6 +5,7 @@ import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
+import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AssignCommand;
@@ -35,7 +36,18 @@ public class AssignCommandParser {
                     AssignCommand.MESSAGE_USAGE));
         }
 
-        Group group = ParserUtil.parseGroup(argumentMultimap.getValue(PREFIX_GROUP).get());
+        Group group;
+
+        try {
+            group = ParserUtil.parseGroup(argumentMultimap.getValue(PREFIX_GROUP).get());
+        } catch (NoSuchElementException e ){
+            group = new Group();
+            group.setGroupName("N/A");
+        } catch (ParseException e){
+            throw e;
+        }
+
+
         Name name = ParserUtil.parseName(argumentMultimap.getValue(PREFIX_NAME).get());
 
         return new AssignCommand(group, name);
