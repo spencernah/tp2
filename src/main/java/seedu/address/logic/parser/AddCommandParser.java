@@ -8,6 +8,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -53,18 +54,25 @@ public class AddCommandParser implements Parser<AddCommand> {
             Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
             Favourite favourite = new Favourite(false);
             Group group;
-            if (argMultimap.getValue(PREFIX_GROUP).isEmpty()) {
+
+            try {
+                group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
+            } catch (NoSuchElementException e) {
                 group = new Group();
                 group.setGroupName("N/A");
-            } else {
-                group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
+            } catch (ParseException e) {
+                throw e;
             }
+
+
             Person person = new Person(name, phone, email, address, remark, tagList, group, favourite);
 
 
             return new AddCommand(person);
         } catch (GroupNotFoundException e) {
             throw new ParseException(e.getMessage());
+        } catch (ParseException e) {
+            throw e;
         }
     }
     /**
