@@ -14,6 +14,10 @@ import seedu.address.model.Model;
 import seedu.address.model.person.Favourite;
 import seedu.address.model.person.Person;
 
+
+/**
+ * Favourite a person.
+ */
 public class FavouriteCommand extends Command {
     public static final String COMMAND_WORD = "favourite";
     public static final String COMMAND_WORD2 = "fav";
