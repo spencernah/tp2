@@ -45,6 +45,8 @@ Users can input via a command line interface and access features that help with 
    * **`clear`** : Deletes all contacts.
 
    * **`exit`** : Exits the app.
+   
+   * **`find`** `KEYWORD [MORE_KEYWORDS]`: Finds names that contain the keywords
 
 1. Refer to the [Features](#features) below for details of each command.
 
@@ -156,7 +158,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Full words and partial words will be matched e.g. `Han` will match `Hans`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
