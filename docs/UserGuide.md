@@ -181,21 +181,46 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
+### Groups
+
 ### Creating a group: `create`
 
 Create a new group to the Contacts Address Book.
 
 Format: `create g/<GROUP NAME>`
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-Not spaces comes before or after the group name.
-</div>
 
 Examples:
 * `create g/SUPPLIERS`
 * `create g/CUSTOMERS`
 
-### Rename the group: `rename`
+
+### Assigning a contact to a group: `assign`
+
+Assign a  person to a group in Address Book.
+
+Format: `assign n/<CONTACT NAME> g/<GROUP NAME>`
+
+Examples:
+* `assign n/John g/SUPPLIERS`
+
+### List all created group: `listgn`
+
+List all created group in Address Book.
+
+Format: `listgn`
+
+### List everyone in the group: `listpfg`
+
+List all person from selected group in Address Book.
+
+Format: `listpfg g/GROUPNAME`
+
+Examples:
+* `listpfg g/CUSTOMERS`
+
+
+### Rename the group: `rename` (Coming soon)
 
 Rename an existing group to another name.
 

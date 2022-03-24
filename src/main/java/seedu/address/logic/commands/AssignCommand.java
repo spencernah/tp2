@@ -16,7 +16,7 @@ public class AssignCommand extends Command {
     public static final String COMMAND_WORK = "assign";
 
     public static final String MESSAGE_USAGE = COMMAND_WORK + ": assign a contact to the group. "
-            + "Parameters: " + PREFIX_NAME + "Contact name" + PREFIX_GROUP + "Group name";
+            + "Parameters: " + PREFIX_NAME + "Contact name " + PREFIX_GROUP + "Group name";
 
     public static final String MESSAGE_SUCCESS = "Contact %1$s assigned to Group %2$s. ";
     public static final String MESSAGE_NO_EXIST_GROUP = "%2$s is not in the address book. ";
