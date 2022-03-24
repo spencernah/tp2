@@ -46,7 +46,7 @@ Users can input via a command line interface and access features that help with 
 
    * **`exit`** : Exits the app.
    
-   * **`find`** `KEYWORD [MORE_KEYWORDS]`: Exits the app.
+   * **`find`** `KEYWORD [MORE_KEYWORDS]`: Finds names that contain the keywords
 
 1. Refer to the [Features](#features) below for details of each command.
 
