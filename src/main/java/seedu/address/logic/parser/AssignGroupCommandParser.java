@@ -8,12 +8,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
-import seedu.address.logic.commands.AssignCommand;
+import seedu.address.logic.commands.AssignGroupCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Name;
 
-public class AssignCommandParser {
+public class AssignGroupCommandParser {
 
     /**
      * Return an AssignCommand command object that contains user input, contact name and group name
@@ -22,7 +22,7 @@ public class AssignCommandParser {
      * @return A parsed contact name and group name
      * @throws ParseException If contact name or group name fails
      */
-    public AssignCommand parse(String args) throws ParseException {
+    public AssignGroupCommand parse(String args) throws ParseException {
 
         requireNonNull(args);
 
@@ -33,7 +33,7 @@ public class AssignCommandParser {
             || !argumentMultimap.getPreamble().isEmpty()) {
 
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    AssignCommand.MESSAGE_USAGE));
+                    AssignGroupCommand.MESSAGE_USAGE));
         }
 
         Group group;
@@ -50,7 +50,7 @@ public class AssignCommandParser {
 
         Name name = ParserUtil.parseName(argumentMultimap.getValue(PREFIX_NAME).get());
 
-        return new AssignCommand(group, name);
+        return new AssignGroupCommand(group, name);
     }
 
     /**

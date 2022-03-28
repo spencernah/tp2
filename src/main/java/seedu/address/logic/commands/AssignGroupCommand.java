@@ -11,7 +11,7 @@ import seedu.address.model.group.Group;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 
-public class AssignCommand extends Command {
+public class AssignGroupCommand extends Command {
 
     public static final String COMMAND_WORK = "assign";
 
@@ -31,7 +31,7 @@ public class AssignCommand extends Command {
      * @param group The group, which the person to be assigned to.
      * @param name The name to be assigned
      */
-    public AssignCommand(Group group, Name name) {
+    public AssignGroupCommand(Group group, Name name) {
         requireNonNull(group);
         requireNonNull(name);
         this.group = group;
