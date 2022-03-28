@@ -9,13 +9,13 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.RemarkContainsKeywordsPredicate;
 
 /**
- * Parses input arguments and creates a new FindCommand object
+ * Parses input arguments and creates a new FindRemarkCommand object
  */
 public class FindRemarkCommandParser implements Parser<FindRemarkCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the FindCommand
-     * and returns a FindCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the FindRemarkCommand
+     * and returns a FindRemarkCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindRemarkCommand parse(String args) throws ParseException {
