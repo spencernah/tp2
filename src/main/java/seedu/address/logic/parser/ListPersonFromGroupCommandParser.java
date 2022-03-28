@@ -11,7 +11,7 @@ import seedu.address.model.group.Group;
 public class ListPersonFromGroupCommandParser implements Parser<ListPersonFromGroupCommand> {
 
     /**
-     * return a ListPersonFromGroupCommand object that contains the value of user inputted group name
+     * Return a ListPersonFromGroupCommand object that contains the value of user inputted group name
      * @param args contains group name
      * @return an ListPersonFromGroupCommand object
      * @throws ParseException if parsing of group value fails

@@ -25,6 +25,7 @@ import seedu.address.logic.commands.ListFavCommand;
 import seedu.address.logic.commands.ListGroupNameCommand;
 import seedu.address.logic.commands.ListPersonFromGroupCommand;
 import seedu.address.logic.commands.RemarkCommand;
+import seedu.address.logic.commands.RenameGroupCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
@@ -68,6 +69,9 @@ public class AddressBookParser {
 
         case DeleteGroupCommand.COMMAND_WORD:
             return new DeleteGroupCommandParser().parse(arguments);
+
+        case RenameGroupCommand.COMMAND_WORD:
+            return new RenameGroupCommandParser().parse(arguments);
 
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
