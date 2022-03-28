@@ -14,11 +14,14 @@ package seedu.address.logic.commands;
 public class FindRemarkCommand extends Command {
 
     public static final String COMMAND_WORD = "findr";
+    public static final String COMMAND_WORD_1 = "findremark";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons whose remark contain any of "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + "/" + COMMAND_WORD_1
+            + ": Finds all persons whose remark contain any of "
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " swim";
+            + "Example: " + COMMAND_WORD + " swim OR"
+            + COMMAND_WORD_1 + "swim";
 
     private final RemarkContainsKeywordsPredicate predicate;
     public FindRemarkCommand(RemarkContainsKeywordsPredicate predicate) {

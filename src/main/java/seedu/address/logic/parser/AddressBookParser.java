@@ -86,6 +86,7 @@ public class AddressBookParser {
             return new FindGroupCommandParser().parse(arguments);
 
         case FindRemarkCommand.COMMAND_WORD:
+        case FindRemarkCommand.COMMAND_WORD_1:
             return new FindRemarkCommandParser().parse(arguments);
 
         case RemarkCommand.COMMAND_WORD:
