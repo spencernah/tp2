@@ -19,8 +19,8 @@ public class AssignGroupCommand extends Command {
             + "Parameters: " + PREFIX_NAME + "Contact name " + PREFIX_GROUP + "Group name";
 
     public static final String MESSAGE_SUCCESS = "Contact %1$s assigned to Group %2$s. ";
-    public static final String MESSAGE_NO_EXIST_GROUP = "%2$s is not in the address book. ";
-    public static final String MESSAGE_NO_EXIST_PERSON = "%1$s is not in the address book. ";
+    public static final String MESSAGE_NO_EXIST_GROUP = "The group is not in the address book. ";
+    public static final String MESSAGE_NO_EXIST_PERSON = "The person is not in the address book. ";
 
     private final Group group;
     private final Name name;
