@@ -1,11 +1,11 @@
 
 package seedu.address.logic.commands;
 
-        import static java.util.Objects.requireNonNull;
+import static java.util.Objects.requireNonNull;
 
-        import seedu.address.commons.core.Messages;
-        import seedu.address.model.Model;
-        import seedu.address.model.person.RemarkContainsKeywordsPredicate;
+import seedu.address.commons.core.Messages;
+import seedu.address.model.Model;
+import seedu.address.model.person.RemarkContainsKeywordsPredicate;
 
 /**
  * Finds and lists all persons in address book whose remarks contain any of the argument keywords.
@@ -24,6 +24,11 @@ public class FindRemarkCommand extends Command {
             + COMMAND_WORD_1 + "swim";
 
     private final RemarkContainsKeywordsPredicate predicate;
+
+    /**
+     *
+     * @param predicate list of Person that matches the condition
+     */
     public FindRemarkCommand(RemarkContainsKeywordsPredicate predicate) {
 
         this.predicate = predicate;

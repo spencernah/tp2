@@ -25,6 +25,11 @@ public class FindGroupCommand extends Command {
             + COMMAND_WORD_1 + " NUS";
 
     private final GroupContainsKeywordsPredicate predicate;
+
+    /**
+     *
+     * @param predicate list of Person that matches the condition
+     */
     public FindGroupCommand(GroupContainsKeywordsPredicate predicate) {
 
         this.predicate = predicate;
