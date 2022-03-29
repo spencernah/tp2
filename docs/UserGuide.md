@@ -40,7 +40,7 @@ Users can input via a command line interface and access features that help with 
 
    * **`unassign`** `1`: Remove existing group from the 1st contact. (coming soon)
    
-   * **`rename`** : Renaming the existing group at the index to another name. (coming soon)
+   * **`rename`** `GROUP_INDEX g/GROUP_NAME`: Renaming the existing group at the index to another name.
 
    * **`deleteg`** `1` : Delete the 1st group show in the current list.
    
