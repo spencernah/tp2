@@ -11,7 +11,7 @@ import seedu.address.model.group.Group;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 
-public class AssignCommand extends Command {
+public class AssignGroupCommand extends Command {
 
     public static final String COMMAND_WORK = "assign";
 
@@ -19,8 +19,8 @@ public class AssignCommand extends Command {
             + "Parameters: " + PREFIX_NAME + "Contact name " + PREFIX_GROUP + "Group name";
 
     public static final String MESSAGE_SUCCESS = "Contact %1$s assigned to Group %2$s. ";
-    public static final String MESSAGE_NO_EXIST_GROUP = "%2$s is not in the address book. ";
-    public static final String MESSAGE_NO_EXIST_PERSON = "%1$s is not in the address book. ";
+    public static final String MESSAGE_NO_EXIST_GROUP = "The group is not in the address book. ";
+    public static final String MESSAGE_NO_EXIST_PERSON = "The person is not in the address book. ";
 
     private final Group group;
     private final Name name;
@@ -31,7 +31,7 @@ public class AssignCommand extends Command {
      * @param group The group, which the person to be assigned to.
      * @param name The name to be assigned
      */
-    public AssignCommand(Group group, Name name) {
+    public AssignGroupCommand(Group group, Name name) {
         requireNonNull(group);
         requireNonNull(name);
         this.group = group;
