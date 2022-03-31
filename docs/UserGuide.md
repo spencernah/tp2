@@ -300,7 +300,7 @@ Format: `findg KEYWORD [MORE_KEYWORDS]` OR `findgroup KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `findg NUS` returns all contacts assigned to group that contains "NUS"
 
-### Exiting the program : `exit`\ `bye` \ `quit`
+### Exiting the program : `exit`/ `bye` / `quit`
 
 Exits the program.
 
