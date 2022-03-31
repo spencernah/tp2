@@ -10,9 +10,9 @@ Users can input via a command line interface and access features that help with 
 
 Given below are my contributions to the project.
 
-* **New Feature**: Creates a new group to the contacts address book
+* **New Feature**: Favourite a person in the address book
 
-* **New Feature**: Rename an existing group to another name
+* **New Feature**: List all the favourited person
 
 * **New Feature**: Assign a person to a group
 
@@ -27,13 +27,13 @@ Given below are my contributions to the project.
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `delete` and `find` [\#72]()
-    * Did cosmetic tweaks to existing documentation of features `clear`, `exit`: [\#74]()
+    * Added documentation for the features `favourite` and `listfav` [\#37](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/37)
+    * Did cosmetic tweaks to existing documentation of features `exit`: [\#42](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/42)
   * Developer Guide:
     * Added implementation details of the `delete` feature.
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments): [\#12](), [\#32](), [\#19](), [\#42]()
+  * PRs reviewed (with non-trivial review comments): [\#28](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/28), [\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67), [\#19](), [\#42]()
   * Contributed to forum discussions (examples: [1](), [2](), [3](), [4]())
   * Reported bugs and suggestions for other teams in the class (examples: [1](), [2](), [3]())
   * Some parts of the history feature I added was adopted by several other class mates ([1](), [2]())
