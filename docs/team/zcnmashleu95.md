@@ -10,36 +10,31 @@ Users can input via a command line interface and access features that help with 
 
 Given below are my contributions to the project.
 
-* **New Feature**: Creates a new group to the contacts address book
-
-* **New Feature**: Rename an existing group to another name
-
-* **New Feature**: Assign a person to a group
-
-* **Code contributed**: [RepoSense link]()
+* **Code contributed**: [RepoSense link](https://nus-tic4002-ay2122s2.github.io/tp-dashboard/?Author=zcnmashleu95&tabRepo=AY2122S2-TIC4002-F18-1%2Ftp2%5Bmaster%5D&search=&sort=groupTitle&sortWithin=title&since=2022-02-11&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=authorship&tabAuthor=zcnmashleu95&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false)
 
 * **Project management**:
-  * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
+  * Coordinated work for the User Stories and Target Users 
 
 * **Enhancements to existing features**:
-  * Updated the GUI color scheme (Pull requests [\#33](), [\#34]())
-  * Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests [\#36](), [\#38]())
+  * Enhanced and refactored seedu.address/commons/util/StringUtil functions. Originally, the matching function could only match
+    with the exact word. After the enhancement, it matched with partial words as well. This function would improve the find functionality
+    and be utilised in the newly added Find Remark and Find Group commands included from my teammate.
+  * Improved the Find Command Functionality. Originally, it only matched with exact words and was limited to names only. Now, it is like an intuitive search function, whereby the user could search for contacts that contains the keyword partially
+    in its details. The Find Command Functionality is also applied to contact details instead of names now. Contact details include phone numbers, addresses and emails in the same command.
+  * Refactored parsers such as AddCommand Parser and CreateGroup Parser with better try-catch statements/exception handling  
+  * Refined existing test cases in the StringUtil and Find Command. Added more assertions in test cases.
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `delete` and `find` [\#72]()
-    * Did cosmetic tweaks to existing documentation of features `clear`, `exit`: [\#74]()
+    * Refined documentation for the features `find` [\#72]()
+
   * Developer Guide:
-    * Added implementation details of the `delete` feature.
+    * 
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments): [\#12](), [\#32](), [\#19](), [\#42]()
-  * Contributed to forum discussions (examples: [1](), [2](), [3](), [4]())
-  * Reported bugs and suggestions for other teams in the class (examples: [1](), [2](), [3]())
-  * Some parts of the history feature I added was adopted by several other class mates ([1](), [2]())
+  * Reviewed and approved PRS
 
 * **Tools**:
-  * Integrated a third party library (Natty) to the project ([\#42]())
-  * Integrated a new Github plugin (CircleCI) to the team repo
+  * Github workflow
 
-* _{you can add/remove categories in the list above}_
+
