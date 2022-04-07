@@ -37,7 +37,7 @@ public class ListGroupNameCommand extends Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (GroupList.getGroupListSize() == 0) {
+        if (GroupList.getGroupListSize() <= 1) {
             return new CommandResult(MESSAGE_NO_GROUP);
         }
 

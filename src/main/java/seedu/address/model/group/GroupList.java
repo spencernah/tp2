@@ -65,6 +65,11 @@ public class GroupList {
      */
     public static void clearGroupList () {
         groupList.clear();
+        Group defaultGroup = new Group();
+        defaultGroup.setGroupName("N/A");
+
+        addGroup(defaultGroup);
+        assert !groupList.isEmpty();
     }
 
     /**
