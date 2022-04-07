@@ -58,21 +58,6 @@ public class AddressBookParser {
         case AddCommand.COMMAND_WORD:
             return new AddCommandParser().parse(arguments);
 
-        case CreateGroupCommand.COMMAND_WORD:
-            return new CreateGroupParser().parse(arguments);
-
-        case ListGroupNameCommand.COMMAND_WORD:
-            return new ListGroupNameCommand();
-
-        case AssignGroupCommand.COMMAND_WORK:
-            return new AssignGroupCommandParser().parse(arguments);
-
-        case DeleteGroupCommand.COMMAND_WORD:
-            return new DeleteGroupCommandParser().parse(arguments);
-
-        case RenameGroupCommand.COMMAND_WORD:
-            return new RenameGroupCommandParser().parse(arguments);
-
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
 
@@ -106,8 +91,26 @@ public class AddressBookParser {
         case ListFavCommand.COMMAND_WORD:
             return new ListFavCommand();
 
+        case CreateGroupCommand.COMMAND_WORD:
+            return new CreateGroupParser().parse(arguments);
+
+        case ListGroupNameCommand.COMMAND_WORD:
+        case ListGroupNameCommand.COMMAND_WORD2:
+            return new ListGroupNameCommand();
+
         case ListPersonFromGroupCommand.COMMAND_WORD:
             return new ListPersonFromGroupCommandParser().parse(arguments);
+
+        case AssignGroupCommand.COMMAND_WORK:
+            return new AssignGroupCommandParser().parse(arguments);
+
+        case DeleteGroupCommand.COMMAND_WORD:
+            return new DeleteGroupCommandParser().parse(arguments);
+
+        case RenameGroupCommand.COMMAND_WORD:
+            return new RenameGroupCommandParser().parse(arguments);
+
+
 
         case ExitCommand.COMMAND_WORD:
         case ExitCommand.COMMAND_WORD2:

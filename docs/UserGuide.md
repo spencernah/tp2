@@ -152,23 +152,20 @@ Deletes all contact(s) from the address book
 Format: `clear`
 
 
-### Adding/Updating remarks: `remark`
+### Adding/Updating/Removing remarks: `remark`
 
-Adds a remark to an existing contact. If contact has an existing remark, update the remark instead.
+Adds a remark to an existing contact. If contact has an existing remark, update the remark instead. 
 
 Format: `remark <INDEX> r/<DESCRIPTION>`
 
+If `<DESCRIPTION>` is left blank, it will be treated as if the user does not want a remark and will remove the existing 
+remark instead. Alternative, if you did not put `r/` (e.g. `remark <INDEX>`), the remark will also be removed,
+
 Examples:
 * `remark 1 r/standard steel supplier` Add a remark to the 1st contact.
+* `remark 1 r/` Remove the remark that was added to the 1st contact.
+* `remark 1` Also remove the existing remark of the 1st contact.
 
-### Deleting remarks: `remark`
-
-Deletes an existing remark of a contact.
-
-Format: `remark <INDEX>`
-
-Examples:
-* `remark 1` Deletes the existing remark of the 1st contact.
 
 ### Favouriting/Unfavouriting a contact: `favourite` / `fav`
 
@@ -197,6 +194,10 @@ Examples:
 Assign a contact to an existing group in the address book.
 
 Format: `assign n/<CONTACT NAME> g/<GROUP NAME>`
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Remember that the contact name is case sensitive.
+</div>
 
 Examples:
 * `assign n/John g/SUPPLIERS
@@ -231,7 +232,7 @@ Display a list of all contacts in the address book.
 
 Format: `list`
 
-### List all group(s): `listgn`
+### List all group(s): `listgn` / `listgrp`
 
 Display a list of all groups in address book.
 
