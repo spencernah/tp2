@@ -52,7 +52,7 @@ Users can input via a command line interface and access features that help with 
    
    * **`listfav`** : List all contacts that are marked with favourite
 
-   * **`find`** `KEYWORD [MORE_KEYWORDS]`: Finds names that contain the keywords
+   * **`find`** `KEYWORD [MORE_KEYWORDS]`: Finds contacts that contain the keywords
 
    * **`exit`** : Exits the app.
    
@@ -256,14 +256,19 @@ Format: `listfav`
 
 ### Finding contact(s) by name: `find`
 
-Finds contact(s) whose names contain any of the given keywords.
+Finds contact(s) whose contact details contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Full words and partial words will be matched. e.g. `Han` will match `Hans`
+* Only Contact Details are searched. Contact Details include name, address, phone number and email only.
+* Full words and partial words will be matched. e.g. 
+`Han` will match `Hans` for names,
+`123` will match `21234` for phone numbers,
+`yish` will match `yishun` for addresses,
+`tes` will match `test@email.com` for emails.
+
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
