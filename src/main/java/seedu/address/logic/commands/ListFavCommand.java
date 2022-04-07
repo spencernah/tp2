@@ -21,7 +21,7 @@ public class ListFavCommand extends Command {
             + "Example: " + COMMAND_WORD;
 
     public static final String MESSAGE_NO_CONTACT = "Listed all persons who been favourite (but you do not have "
-            +"any contacts favourite)";
+            + "any contacts favourite)";
 
 
     @Override

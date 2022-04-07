@@ -4,12 +4,13 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 
-import seedu.address.logic.commands.CreateGroupCommand;
+import java.util.stream.Stream;
+
 import seedu.address.logic.commands.ListPersonFromGroupCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.group.Group;
 
-import java.util.stream.Stream;
+
 
 
 public class ListPersonFromGroupCommandParser implements Parser<ListPersonFromGroupCommand> {
@@ -28,7 +29,8 @@ public class ListPersonFromGroupCommandParser implements Parser<ListPersonFromGr
 
         if (!arePrefixesPresent(argMultimap, PREFIX_GROUP)
                 || !argMultimap.getPreamble().isEmpty()) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ListPersonFromGroupCommand.MESSAGE_USAGE));
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    ListPersonFromGroupCommand.MESSAGE_USAGE));
         }
 
         Group group = null;

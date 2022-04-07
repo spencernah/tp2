@@ -56,7 +56,7 @@ public class AddCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
-        if (model.hasSamePersonName(toAdd)){
+        if (model.hasSamePersonName(toAdd)) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
