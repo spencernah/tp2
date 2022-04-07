@@ -61,6 +61,13 @@ public class GroupList {
     }
 
     /**
+     * Get all {@code Group}.
+     */
+    public static void clearGroupList () {
+        groupList.clear();
+    }
+
+    /**
      * List all {@code Groups} as String.
      *
      */

@@ -20,6 +20,9 @@ public class ListPersonFromGroupCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List persons in the group. "
             + "Parameters: " + PREFIX_GROUP + "NAME ";
 
+    public static final String MESSAGE_NO_CONTACT = "Listed all persons in the group (but you do not have "
+            + "anyone assigned to this group)";
+
     private final Group toList;
 
     /**
@@ -37,6 +40,9 @@ public class ListPersonFromGroupCommand extends Command {
             throw new CommandException("This group does not exist.");
         }
         model.updateFilteredPersonList(predicateShowAllPersonsInGroup(toList));
+        if (model.getFilteredPersonList().size() == 0) {
+            return new CommandResult(MESSAGE_NO_CONTACT);
+        }
         return new CommandResult(MESSAGE_SUCCESS + toList.toString());
     }
 }

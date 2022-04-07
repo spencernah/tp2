@@ -13,7 +13,7 @@ public class ListCommand extends Command {
     public static final String COMMAND_WORD = "list";
 
     public static final String MESSAGE_SUCCESS = "Listed all persons (You have %1$d contacts)";
-    public static final String MESSAGE_NO_CONTACT = "Listed all persons (You have do not have any contacts)";
+    public static final String MESSAGE_NO_CONTACT = "Listed all persons (You do not have any contacts added)";
 
 
     @Override
