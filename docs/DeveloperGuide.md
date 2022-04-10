@@ -2,14 +2,14 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
+* Table of Contents:
 * *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
 * *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
 * *[Design](DeveloperGuide.md#design)*
-* *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
-* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
+* *[Implementation](DeveloperGuide.md#implementation)*
+* *[Documentation, logging, testing, configuration, dev-ops](DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops)*
 * *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
-* *[Use Cases](DeveloperGuide.md#use-cases)*
+* *[Appendix: Instructions for manual testing](DeveloperGuide.md#appendix-instructions-for-manual-testing)*
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -290,16 +290,21 @@ Evolve: Better searchability (search based on certain criteria) Provide alternat
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                    | So that I can…​                                                        |
-| -------- | ------------------------------------------ |---------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions          | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person                | keep record of the person contact                                      |
-| `* * *`  | user                                       | delete a person                 | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | create different contact groups | sort the contacts into groups for different purposes need              |
-| `* * *`  | user                                       | find a person by name           | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details    | minimize chance of someone else seeing them by accident                |
-| `* *`    | linux user                                 | close the program using keywords like quit  | it is similar to most of the exit command I used.          |
-| `*`      | user with many persons in the address book | sort persons by name            | locate a person easily                                                 |
+| Priority | As a …​                                    | I want to …​                               | So that I can…​                                                        |
+| -------- | ------------------------------------------ |--------------------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user                                   | see usage instructions                     | refer to instructions when I forget how to use the App                 |
+| `* * *`  | user                                       | add a new person                           | keep record of the person contact                                      |
+| `* * *`  | user                                       | delete a person                            | remove entries that I no longer need                                   |
+| `* * *`  | user                                       | create different contact groups            | sort the contacts into groups for different purposes need              |
+| `* * *`  | user                                       | list how many groups in my address book    | edit or delete redundant groups                                        |
+| `* * *`  | user                                       | assign a contact to an existing group      | find different contacts under a group                                  |
+| `* * *`  | user                                       | list all the people in a given group       | know who is in that group                                              |
+| `* * *`  | user                                       | delete a group                             | remove the group that is no longer needed                              |
+| `* * *`  | user                                       | rename a group                             | change the group name without moving person to another group           |
+| `* * *`  | user                                       | find a person by name                      | locate details of persons without having to go through the entire list |
+| `* *`    | user                                       | add a remark to a contact                  | identify a person quickly and easily                                   |
+| `* *`    | linux user                                 | close the program using keywords like quit | it is similar to most of the exit command I used.                      |
+| `*`      | user with many persons in the address book | sort persons by name                       | locate a person easily                                                 |
 
 *{More to be added}*
 
@@ -318,6 +323,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2.  CAB shows a list of persons
 3.  User requests to delete a specific person in the list
 4.  CAB deletes the person
+
+**Use case: Remark a person**
+1.  User requests to list persons
+2.  CAB shows a list of persons
+3.  User requests to remark a specific person in the list
+4.  CAB remark the person
 
 **Use case: Creating a group**
 1. User keys in the name of group
@@ -339,6 +350,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. User requests to list all the person in a group
 2. CAB shows a list of person from the group
 
+**Use case: Delete a group**
+1.  User requests to list all the group
+2.  CAB shows a list of group name
+3.  User requests to delete a specific group in the list
+4.  CAB deletes the group
+
+**Use case: Rename a group**
+1.  User requests to list all the group
+2.  CAB shows a list of group name
+3.  User requests to rename a specific group in the list
+4.  CAB rename the group
 **Extensions**
 
 * 2a. The list is empty.
