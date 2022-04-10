@@ -2,14 +2,14 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
+* Table of Contents:
 * *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
 * *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
 * *[Design](DeveloperGuide.md#design)*
-* *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
-* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
+* *[Implementation](DeveloperGuide.md#implementation)*
+* *[Documentation, logging, testing, configuration, dev-ops](DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops)*
 * *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
-* *[Use Cases](DeveloperGuide.md#use-cases)*
+* *[Appendix: Instructions for manual testing](DeveloperGuide.md#appendix-instructions-for-manual-testing)*
 
 --------------------------------------------------------------------------------------------------------------------
 

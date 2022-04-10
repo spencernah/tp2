@@ -10,13 +10,18 @@ Users can input via a command line interface and access features that help with 
 
 Given below are my contributions to the project.
 
-* **New Feature**: Creates a new group to the contacts address book
-
 * **New Feature**: Rename an existing group to another name
+  * What it does: Allows the user to rename an existing group to another group name.
+  * Justification: This feature improves the product significantly because a user can update the group to another suitable group name.
+  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
 
-* **New Feature**: Assign a person to a group
+* **New Feature**: Delete a group name
+  * What it does: Allows the user to delete a group name.
+  * Justification: This feature improves the product significantly because a user can clean up the redundant groups.
+  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
 
-* **Code contributed**: [RepoSense link]()
+
+* **Code contributed**: [RepoSense link](https://nus-tic4002-ay2122s2.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2022-02-11&tabOpen=true&tabType=authorship&tabAuthor=spencernah&tabRepo=AY2122S2-TIC4002-F18-1%2Ftp2%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code&authorshipIsBinaryFileTypeChecked=false)
 
 * **Project management**:
   * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
