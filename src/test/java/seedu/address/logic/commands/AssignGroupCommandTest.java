@@ -27,11 +27,10 @@ import seedu.address.model.person.Name;
  */
 public class AssignGroupCommandTest {
 
-    private final Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_newGroup_success() {
-
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         Group newGroup = new Group().setGroupName("new123");
         Name name = new Name("Alice Pauline");
         AssignGroupCommand assignGroupCommand = new AssignGroupCommand(newGroup, name);

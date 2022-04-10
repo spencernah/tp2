@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sze Chun's Project Portfolio Page
+title: Lam Sze Chun's Project Portfolio Page
 ---
 
 ### Project: Contacts Address Book
@@ -16,7 +16,7 @@ Given below are my contributions to the project.
   * Coordinated work for the User Stories and Target Users 
 
 * **Enhancements to existing features**:
-  * Enhanced and refactored seedu.address/commons/util/StringUtil functions. Originally, the matching function could only match
+  * Enhanced and refactored `seedu.address/commons/util/StringUtil` functions. Originally, the matching function could only match
     with the exact word. After the enhancement, it matched with partial words as well. This function would improve the find functionality
     and be utilised in the newly added Find Remark and Find Group commands included from my teammate as well.
   * Improved the Find Command Functionality. Originally, it only matched with exact words and was limited to names only. Now, it is like an intuitive search function, whereby the user could search for contacts that contains the keyword partially
@@ -25,11 +25,15 @@ Given below are my contributions to the project.
   * Refined existing test cases in the StringUtil and Find Command. Added more assertions in test cases.
   * Added Unit Testing for critical new features such as Assign Group
   * Fixed bugs related to the unit test cases for the CommandsTests and ParserTests
+  * Refactored the test cases to be able to integrate with the new feature Groups 
 
 * **Documentation**:
   * User Guide:
     * Edited documentation for the feature `find` 
     * Brainstormed and formed the target user and user stories for the submission
+  *Testing.md:
+    *Elaborated further about the unit tests and their setup
+ 
 
 * **Community**:
   * Reviewed and approved PRS. Some of them include:
@@ -40,5 +44,8 @@ Given below are my contributions to the project.
 
 * **Tools**:
   * Github workflow
+    - Enabled setting whereby continue-on-error is false (switchable). If the setting is false, when an error occurs in the CI/CD process, the following task will not continue.
+      This feature may be useful depending on the circumstances (if CI/CD runs are costly) or on the stage of development (likelihood of encountering errors during pushes)
+  * JUnit Test
 
 

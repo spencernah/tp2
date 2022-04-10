@@ -32,7 +32,6 @@ public class RemarkCommandTest {
     private static final String REMARK_STUB = "Some remark";
 
 
-
     @Test
     public void execute_addRemarkUnfilteredList_success() {
         Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
