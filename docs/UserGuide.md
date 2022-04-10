@@ -14,7 +14,7 @@ Users can input via a command line interface and access features that help with 
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `contactsaddressbook.jar` from [here](https://https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
+2. Download the latest `contactsaddressbook.jar` from [here](https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your Contacts Address Book.
 
@@ -34,6 +34,8 @@ Users can input via a command line interface and access features that help with 
 
    * **`clear`** : Deletes all contacts.
 
+   * **`remark`** `INDEX r/DESCRIPTION` : Add remark to a contact.
+   
    * **`create`** `g/GROUPNAME` : Creates a new group to the address book.
    
    * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign contact to a group.
@@ -202,7 +204,7 @@ Remember that the contact name is case sensitive.
 Examples:
 * `assign n/John g/SUPPLIERS
 
-### Renaming a group: `rename` (Coming soon)
+### Renaming a group: `rename` 
 
 Rename an existing group to another name.
 
@@ -213,16 +215,16 @@ Format: `rename <INDEX> g/<GROUP NAME>`
 Examples:
 * `rename 1 g/SUPPLIERS` Renames the first group into SUPPLIERS.
 
-### Deleting a group: `delete`
+### Deleting a group: `deleteg`
 
 Delete an existing group in the address book.
 
-Format: `delete <INDEX>`
+Format: `deleteg <INDEX>`
 * Index **must be a positive integer** 1, 2, 3, …​
 * Index **cannot be greater than the number of groups** e.g. if there are 7 groups, index cannot be of a value that is greater than 7
 
 Examples:
-* `delete 1` Deletes the first group in address book.
+* `deleteg 1` Deletes the first group in address book.
 
 ### List
 
@@ -353,8 +355,8 @@ Action | Format, Examples
 **Un-Favourite Contact** | `favourite INDEX` OR `fav INDEX`<br> `fav 1`
 **Create Group** | `create g/GROUPNAME` <br> e.g., `create g/NUS TIC4002`
 **Assign Group to Contact** | `assign n/PERSONNAME g/GROUPNAME` <br> e.g., `assign n/John Doe g/NUS TIC4002`
-**Rename Group** (coming soon) |
-**Delete Group** | `delete INDEX` <br> e.g., `delete 1`
+**Rename Group** |`rename INDEX g/GROUPNAME` <br> e.g., `rename 1 g/NUS TIC4002`
+**Delete Group** | `deleteg INDEX` <br> e.g., `deleteg 1`
 **List All Contact(s)** | `list`
 **List All Group(s)** | `listgn`
 **List All Contact in Group** | `listpfg g/GROUPNAME` <br> e.g., `listpfg g/NUS TIC4002`
