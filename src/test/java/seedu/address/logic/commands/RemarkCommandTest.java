@@ -2,11 +2,8 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 //import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
@@ -41,10 +38,10 @@ public class RemarkCommandTest {
 
         String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
 
-        //assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -57,10 +54,10 @@ public class RemarkCommandTest {
 
         String expectedMessage = String.format(RemarkCommand.MESSAGE_DELETE_REMARK_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
 
-        //assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -75,10 +72,10 @@ public class RemarkCommandTest {
 
         String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
 
-        //assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
