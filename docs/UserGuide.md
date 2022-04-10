@@ -14,7 +14,7 @@ Users can input via a command line interface and access features that help with 
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `contactsaddressbook.jar` from [here](https://https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
+2. Download the latest `addressbook.jar` from [here](https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your Contacts Address Book.
 
@@ -86,6 +86,8 @@ Users can input via a command line interface and access features that help with 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
+* Commands keyword and prefix are case-sensitive. e.g. `help` and `Help` are treated as different command.
+
 </div>
 
 ### Viewing help : `help`
@@ -145,9 +147,9 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
-### Deleting all contact(s) : `clear`
+### Deleting all contact(s) and group(s) : `clear`
 
-Deletes all contact(s) from the address book
+Deletes all contact(s) and group(s) from the address book
 
 Format: `clear`
 
@@ -198,6 +200,7 @@ Format: `assign n/<CONTACT NAME> g/<GROUP NAME>`
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Remember that the contact name is case sensitive.
 </div>
+   
 
 Examples:
 * `assign n/John g/SUPPLIERS
@@ -346,8 +349,8 @@ Action | Format, Examples
 **Edit Contact** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Delete Contact** | `delete INDEX`<br> e.g., `delete 3`
 **Delete All Contact** | `clear`
-**Add Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 /rSend notes`
-**Update Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 /rSend notes`
+**Add Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 r/Send notes`
+**Update Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 r/Send notes`
 **Delete Remarks** | `remark INDEX` <br> e.g., `remark 1`
 **Favourite Contact** | `favourite INDEX` OR `fav INDEX` <br> `fav 1`
 **Un-Favourite Contact** | `favourite INDEX` OR `fav INDEX`<br> `fav 1`
