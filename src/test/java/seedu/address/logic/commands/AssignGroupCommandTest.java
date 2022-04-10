@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.GROUP_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_GROUP_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_GROUP_BOB;
+//import static seedu.address.logic.commands.CommandTestUtil.VALID_GROUP_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
@@ -27,7 +27,7 @@ import seedu.address.model.person.Name;
  */
 public class AssignGroupCommandTest {
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+    private final Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_newGroup_success() {
@@ -69,13 +69,10 @@ public class AssignGroupCommandTest {
         assertFalse(standardCommand.equals(null));
 
         // different types -> returns false
-        assertFalse(standardCommand.equals(new ClearCommand()));
+        assertFalse(standardCommand.equals((new ClearCommand())));
 
-        // different index -> returns false
-        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_BOB),
-                new Name(VALID_NAME_AMY))));
 
-        // different descriptor -> returns false
+        // different name -> returns false
         assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(GROUP_DESC_AMY),
                 new Name(VALID_NAME_BOB))));
     }

@@ -111,14 +111,17 @@ public class EditCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        // short circuit if same object
-        if (other == this) {
-            return true;
-        }
+
+
 
         // instanceof handles nulls
         if (!(other instanceof EditCommand)) {
             return false;
+        }
+
+        // short circuit if same object
+        if (other == this) {
+            return true;
         }
 
         // state check
@@ -236,11 +239,11 @@ public class EditCommand extends Command {
             // state check
             EditPersonDescriptor e = (EditPersonDescriptor) other;
 
-            return getName().equals(e.getName())
-                    && getPhone().equals(e.getPhone())
-                    && getEmail().equals(e.getEmail())
-                    && getAddress().equals(e.getAddress())
-                    && getTags().equals(e.getTags());
+            return getName().toString().equals(e.getName().toString())
+                    && getPhone().toString().equals((e.getPhone()).toString())
+                    && getEmail().toString().equals((e.getEmail()).toString())
+                    && getAddress().toString().equals((e.getAddress()).toString())
+                    && getTags().toString().equals((e.getTags()).toString());
         }
 
 

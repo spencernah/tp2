@@ -76,14 +76,13 @@ public class FavouriteCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        // short circuit if same object
-        if (other == this) {
-            return true;
-        }
-
         // instanceof handles nulls
         if (!(other instanceof FavouriteCommand)) {
             return false;
+        }
+        // short circuit if same object
+        if (other == this) {
+            return true;
         }
 
         // state check

@@ -61,4 +61,16 @@ public class AssignGroupCommand extends Command {
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, name, group));
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof AssignGroupCommand)) {
+            return false;
+        }
+
+        return other == this // short circuit if same object
+                || (other instanceof AssignGroupCommand // instanceof handles nulls
+                && group.toString().equals(((AssignGroupCommand) other).group.toString())
+                && name.toString().equals((((AssignGroupCommand) other).name).toString()));
+    }
 }
