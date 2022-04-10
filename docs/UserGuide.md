@@ -35,29 +35,29 @@ Users can input via a command line interface and access features that help with 
    * **`clear`** : Deletes all contacts.
 
    * **`remark`** `INDEX r/DESCRIPTION` : Add remark to a contact.
-   
+
    * **`create`** `g/GROUPNAME` : Creates a new group to the address book.
-   
+
    * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign contact to a group.
 
    * **`unassign`** `1`: Remove existing group from the 1st contact. (coming soon)
-   
+
    * **`rename`** `GROUP_INDEX g/GROUP_NAME`: Renaming the existing group at the index to another name.
 
    * **`deleteg`** `1` : Delete the 1st group show in the current list.
    
    * **`list`** : Lists all contacts.
-   
+
    * **`listgn`** : Lists all groups.
-   
+
    * **`listpfg`** `g/GROUPNAME` : Lists all contacts from a specific group.
-   
+
    * **`listfav`** : List all contacts that are marked with favourite
 
    * **`find`** `KEYWORD [MORE_KEYWORDS]`: Finds contacts that contain the keywords
 
    * **`exit`** : Exits the app.
-   
+
 
 
 1. Refer to the [Features](#features) below for details of each command.
