@@ -23,13 +23,12 @@ Given below are my contributions to the project.
     in its details. The Find Command Functionality is also applied to contact details instead of names now. Contact details include phone numbers, addresses and emails in the same command.
   * Refactored parsers such as AddCommand Parser and CreateGroup Parser with better try-catch statements/exception handling  
   * Refined existing test cases in the StringUtil and Find Command. Added more assertions in test cases.
+  * Added Unit Testing for critical new features such as Assign Group
 
 * **Documentation**:
   * User Guide:
     * Refined documentation for the features `find` [\#72]()
 
-  * Developer Guide:
-    * 
 
 * **Community**:
   * Reviewed and approved PRS

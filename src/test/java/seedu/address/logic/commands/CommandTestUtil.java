@@ -39,7 +39,7 @@ public class CommandTestUtil {
     public static final String VALID_REMARK_BOB = "Favourite pastime: Eating";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
-    public static final String VALID_GROUP_AMY = "N/A";
+    public static final String VALID_GROUP_AMY = "123";
     public static final String VALID_GROUP_BOB = "N/A";
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;

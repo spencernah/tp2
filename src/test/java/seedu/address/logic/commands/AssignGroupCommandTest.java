@@ -11,9 +11,11 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
 
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 /**
@@ -44,5 +46,29 @@ public class AssignGroupCommandTest {
         assertCommandSuccess(assignGroupCommand, model, expectedCommandResult, expectedModel);
     }
 
+    @Test
+    public void equals() {
 
+        final AssignGroupCommand standardCommand = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY), new Name(VALID_NAME_AMY));
+
+        // same values -> returns true
+        AssignGroupCommand commandWithSameValues = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY), new Name(VALID_NAME_AMY));
+
+        assertTrue(standardCommand.equals(commandWithSameValues));
+
+        // same object -> returns true
+        assertTrue(standardCommand.equals(standardCommand));
+
+        // null -> returns false
+        assertFalse(standardCommand.equals(null));
+
+        // different types -> returns false
+        assertFalse(standardCommand.equals(new ClearCommand()));
+
+        // different index -> returns false
+        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_BOB), new Name(VALID_NAME_AMY))));
+
+        // different descriptor -> returns false
+        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(GROUP_DESC_AMY), new Name(VALID_NAME_BOB))));
+    }
 }
