@@ -1,22 +1,22 @@
 package seedu.address.logic.commands;
 
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.testutil.PersonBuilder;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.*;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+
+
 
 /**
  * Contains integration tests (interaction with the Model) for {@code AddCommand}.
@@ -49,10 +49,12 @@ public class AssignGroupCommandTest {
     @Test
     public void equals() {
 
-        final AssignGroupCommand standardCommand = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY), new Name(VALID_NAME_AMY));
+        final AssignGroupCommand standardCommand = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY),
+                new Name(VALID_NAME_AMY));
 
         // same values -> returns true
-        AssignGroupCommand commandWithSameValues = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY), new Name(VALID_NAME_AMY));
+        AssignGroupCommand commandWithSameValues = new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_AMY),
+                new Name(VALID_NAME_AMY));
 
         assertTrue(standardCommand.equals(commandWithSameValues));
 
@@ -66,9 +68,11 @@ public class AssignGroupCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_BOB), new Name(VALID_NAME_AMY))));
+        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(VALID_GROUP_BOB),
+                new Name(VALID_NAME_AMY))));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(GROUP_DESC_AMY), new Name(VALID_NAME_BOB))));
+        assertFalse(standardCommand.equals(new AssignGroupCommand(new Group().setGroupName(GROUP_DESC_AMY),
+                new Name(VALID_NAME_BOB))));
     }
 }

@@ -18,20 +18,25 @@ Given below are my contributions to the project.
 * **Enhancements to existing features**:
   * Enhanced and refactored seedu.address/commons/util/StringUtil functions. Originally, the matching function could only match
     with the exact word. After the enhancement, it matched with partial words as well. This function would improve the find functionality
-    and be utilised in the newly added Find Remark and Find Group commands included from my teammate.
+    and be utilised in the newly added Find Remark and Find Group commands included from my teammate as well.
   * Improved the Find Command Functionality. Originally, it only matched with exact words and was limited to names only. Now, it is like an intuitive search function, whereby the user could search for contacts that contains the keyword partially
-    in its details. The Find Command Functionality is also applied to contact details instead of names now. Contact details include phone numbers, addresses and emails in the same command.
+    in its details. The Find Command Functionality is also applied to contact details instead of names now. Contact details include phone numbers, addresses and emails in the same command.This was implemented through the refactored predicate ContactDetailsContainsKeywordsPredicate.
   * Refactored parsers such as AddCommand Parser and CreateGroup Parser with better try-catch statements/exception handling  
   * Refined existing test cases in the StringUtil and Find Command. Added more assertions in test cases.
   * Added Unit Testing for critical new features such as Assign Group
+  * Fixed bugs related to the unit test cases for the CommandsTests and ParserTests
 
 * **Documentation**:
   * User Guide:
-    * Refined documentation for the features `find` [\#72]()
-
+    * Edited documentation for the feature `find` 
+    * Brainstormed and formed the target user and user stories for the submission
 
 * **Community**:
-  * Reviewed and approved PRS
+  * Reviewed and approved PRS. Some of them include:
+  
+  [Pull 77](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/77), 
+  [Pull 71](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/71)
+  [Pull 28](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/28)
 
 * **Tools**:
   * Github workflow
