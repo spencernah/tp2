@@ -61,6 +61,18 @@ public class GroupList {
     }
 
     /**
+     * Get all {@code Group}.
+     */
+    public static void clearGroupList () {
+        groupList.clear();
+        Group defaultGroup = new Group();
+        defaultGroup.setGroupName("N/A");
+
+        addGroup(defaultGroup);
+        assert !groupList.isEmpty();
+    }
+
+    /**
      * List all {@code Groups} as String.
      *
      */

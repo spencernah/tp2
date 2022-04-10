@@ -14,6 +14,9 @@ import seedu.address.model.group.GroupList;
 public class ListGroupNameCommand extends Command {
 
     public static final String COMMAND_WORD = "listgn";
+    public static final String COMMAND_WORD2 = "listgrp";
+
+    public static final String MESSAGE_NO_GROUP = "There are no group created";
 
     private static Logger logger = Logger.getLogger("LIST GROUP NAME");
 
@@ -33,6 +36,9 @@ public class ListGroupNameCommand extends Command {
             logger.log(Level.INFO, "System start to list the group name");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        if (GroupList.getGroupListSize() <= 1) {
+            return new CommandResult(MESSAGE_NO_GROUP);
         }
 
         CommandResult commandResult = new CommandResult(GroupList.listGroups(), false, false);

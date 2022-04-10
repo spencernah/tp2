@@ -34,6 +34,8 @@ Users can input via a command line interface and access features that help with 
 
    * **`clear`** : Deletes all contacts.
 
+   * **`remark`** `INDEX r/DESCRIPTION` : Add remark to a contact.
+   
    * **`create`** `g/GROUPNAME` : Creates a new group to the address book.
    
    * **`assign`** `n/PERSONNAME g/GROUPNAME`: Assign contact to a group.
@@ -152,23 +154,20 @@ Deletes all contact(s) from the address book
 Format: `clear`
 
 
-### Adding/Updating remarks: `remark`
+### Adding/Updating/Removing remarks: `remark`
 
-Adds a remark to an existing contact. If contact has an existing remark, update the remark instead.
+Adds a remark to an existing contact. If contact has an existing remark, update the remark instead. 
 
 Format: `remark <INDEX> r/<DESCRIPTION>`
 
+If `<DESCRIPTION>` is left blank, it will be treated as if the user does not want a remark and will remove the existing 
+remark instead. Alternative, if you did not put `r/` (e.g. `remark <INDEX>`), the remark will also be removed,
+
 Examples:
 * `remark 1 r/standard steel supplier` Add a remark to the 1st contact.
+* `remark 1 r/` Remove the remark that was added to the 1st contact.
+* `remark 1` Also remove the existing remark of the 1st contact.
 
-### Deleting remarks: `remark`
-
-Deletes an existing remark of a contact.
-
-Format: `remark <INDEX>`
-
-Examples:
-* `remark 1` Deletes the existing remark of the 1st contact.
 
 ### Favouriting/Unfavouriting a contact: `favourite` / `fav`
 
@@ -198,10 +197,14 @@ Assign a contact to an existing group in the address book.
 
 Format: `assign n/<CONTACT NAME> g/<GROUP NAME>`
 
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Remember that the contact name is case sensitive.
+</div>
+
 Examples:
 * `assign n/John g/SUPPLIERS
 
-### Renaming a group: `rename` (Coming soon)
+### Renaming a group: `rename` 
 
 Rename an existing group to another name.
 
@@ -212,16 +215,16 @@ Format: `rename <INDEX> g/<GROUP NAME>`
 Examples:
 * `rename 1 g/SUPPLIERS` Renames the first group into SUPPLIERS.
 
-### Deleting a group: `delete`
+### Deleting a group: `deleteg`
 
 Delete an existing group in the address book.
 
-Format: `delete <INDEX>`
+Format: `deleteg <INDEX>`
 * Index **must be a positive integer** 1, 2, 3, …​
 * Index **cannot be greater than the number of groups** e.g. if there are 7 groups, index cannot be of a value that is greater than 7
 
 Examples:
-* `delete 1` Deletes the first group in address book.
+* `deleteg 1` Deletes the first group in address book.
 
 ### List
 
@@ -231,7 +234,7 @@ Display a list of all contacts in the address book.
 
 Format: `list`
 
-### List all group(s): `listgn`
+### List all group(s): `listgn` / `listgrp`
 
 Display a list of all groups in address book.
 
@@ -352,8 +355,8 @@ Action | Format, Examples
 **Un-Favourite Contact** | `favourite INDEX` OR `fav INDEX`<br> `fav 1`
 **Create Group** | `create g/GROUPNAME` <br> e.g., `create g/NUS TIC4002`
 **Assign Group to Contact** | `assign n/PERSONNAME g/GROUPNAME` <br> e.g., `assign n/John Doe g/NUS TIC4002`
-**Rename Group** (coming soon) |
-**Delete Group** | `delete INDEX` <br> e.g., `delete 1`
+**Rename Group** |`rename INDEX g/GROUPNAME` <br> e.g., `rename 1 g/NUS TIC4002`
+**Delete Group** | `deleteg INDEX` <br> e.g., `deleteg 1`
 **List All Contact(s)** | `list`
 **List All Group(s)** | `listgn`
 **List All Contact in Group** | `listpfg g/GROUPNAME` <br> e.g., `listpfg g/NUS TIC4002`

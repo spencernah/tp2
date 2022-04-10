@@ -20,12 +20,18 @@ public class ListFavCommand extends Command {
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD;
 
+    public static final String MESSAGE_NO_CONTACT = "Listed all persons who been favourite (but you do not have "
+            + "any contacts favourite)";
+
 
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
         Predicate<Person> favourite = i -> i.getFavourite().getBoolean();
         model.updateFilteredPersonList(favourite);
+        if (model.getFilteredPersonList().size() == 0) {
+            return new CommandResult(MESSAGE_NO_CONTACT);
+        }
         return new CommandResult(
                 String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size()));
     }
