@@ -14,9 +14,7 @@ Users can input via a command line interface and access features that help with 
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-
 2. Download the latest `addressbook.jar` from [here](https://github.com/AY2122S2-TIC4002-F18-1/tp2/releases).
-
 
 3. Copy the file to the folder you want to use as the _home folder_ for your Contacts Address Book.
 
@@ -313,11 +311,11 @@ Format: `findg KEYWORD [MORE_KEYWORDS]` OR `findgroup KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `findg NUS` returns all contacts assigned to group that contains "NUS"
 
-### Exiting the program : `exit`/ `bye` / `quit`
+### Exiting the program : `exit`/ `bye` / `quit` / `/q`
 
 Exits the program.
 
-Format: `exit` OR `bye` OR `quit`
+Format: `exit` OR `bye` OR `quit` OR `/q`
 
 ### Saving the data
 
@@ -352,12 +350,12 @@ Action | Format, Examples
 **Add Contact** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
 **Edit Contact** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Delete Contact** | `delete INDEX`<br> e.g., `delete 3`
-**Delete All Contact** | `clear`
+**Delete All Contact and Group** | `clear`
 **Add Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 r/Send notes`
 **Update Remarks** | `remark INDEX r/[REMARK]` <br> e.g., `remark 1 r/Send notes`
 **Delete Remarks** | `remark INDEX` <br> e.g., `remark 1`
-**Favourite Contact** | `favourite INDEX` OR `fav INDEX` <br> `fav 1`
-**Un-Favourite Contact** | `favourite INDEX` OR `fav INDEX`<br> `fav 1`
+**Favourite Contact** | `favourite INDEX` OR `fav INDEX` <br> e.g., `fav 1`
+**Un-Favourite Contact** | `favourite INDEX` OR `fav INDEX`<br> e.g., `fav 1`
 **Create Group** | `create g/GROUPNAME` <br> e.g., `create g/NUS TIC4002`
 **Assign Group to Contact** | `assign n/PERSONNAME g/GROUPNAME` <br> e.g., `assign n/John Doe g/NUS TIC4002`
 **Rename Group** |`rename INDEX g/GROUPNAME` <br> e.g., `rename 1 g/NUS TIC4002`
@@ -369,4 +367,5 @@ Action | Format, Examples
 **Find By Name** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **Find By Remarks** | `findr KEYWORD [MORE_KEYWORDS]` OR `findremark KEYWORD [MORE_KEYWORDS]` <br> e.g., `findr notes`
 **Find By Group Name** | `findg KEYWORD [MORE_KEYWORDS]` OR `findgroup KEYWORD [MORE_KEYWORDS]` <br> e.g., `findg NUS`
+**Exiting the program** | `exit` OR `bye` OR `quit` OR `/q`
 
