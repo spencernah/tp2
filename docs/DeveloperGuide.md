@@ -429,27 +429,413 @@ testers are expected to do more *exploratory* testing.
 
 1. _{ more test cases …​ }_
 
-### Deleting a person
+### Adding a contact
 
-1. Deleting a person while all persons are being shown
+1. Adding a new contact (no duplicate)
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Adding a contact with all parameters <br>
+       Test case: `add n/Spencer Tan p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: New contact is added with all parameters reflected. Details of the new contact shown in the status message.
+   
+    2. Adding a contact with non-integer `PHONE NUMBER` <br>
+       Test case: `add n/Spencer p/abc e/spencer@gmail.com a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+    3. Adding a contact with invalid format for `EMAIL` <br>
+       Test case: `add n/Spencer p/abc e/spencer a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
+   
+    4. Adding a contact with no `NAME` <br>
+       Test case: `add n/ p/90008000 e/spencer@gmail.com a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+    5. Adding a contact with missing parameter, `NAME` <br>
+       Test case: `add p/90008000 e/spencer@gmail.com a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+    6. Adding a contact with no `PHONE NUMBER` <br>
+       Test case: `add n/Spencer p/ e/spencer a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
+   
+    7. Adding a contact with missing parameter, `PHONE NUMBER` <br>
+       Test case: `add n/Spencer e/spencer a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
+   
+    8. Adding a contact with no `EMAIL` <br>
+       Test case: `add n/Spencer p/90008000 e/ a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
 
-1. _{ more test cases …​ }_
+    9. Adding a contact with missing parameter, `EMAIL` <br>
+       Test case: `add n/Spencer p/90008000  a/Tampines t/student` <br>
+       Expected: No contact is added. Error details shown in the status message.
+   
+    10. Adding a contact with no `ADDRESS` <br>
+        Test case: `add n/Spencer p/90008000 e/spencer@gmail.com a/ t/student` <br>
+        Expected: No contact is added. Error details shown in the status message.
 
-### Saving data
+    11. Adding a contact with missing parameter, `ADDRESS` <br>
+        Test case: `add n/Spencer p/90008000 e/spencer@gmail.com t/student` <br>
+        Expected: No contact is added. Error details shown in the status message.
+   
+    12. Adding a contact with no `TAG` <br>
+        Test case: `add n/Spencer p/90008000 e/spencer@gmail.com a/Tampines t/` <br>
+        Expected: No contact is added. Error details shown in the status message.
 
-1. Dealing with missing/corrupted data files
+    13. Adding a contact with missing parameter, `TAG` <br>
+        Test case: `add n/Spencer p/90008000 e/spencer@gmail.com a/Tampines` <br>
+        Expected: New contact is added with all parameters reflected. Details of the new contact shown in the status message.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+2. Adding a new contact (duplicated)
 
-1. _{ more test cases …​ }_
+   Prerequisites: Contact with the same name has to be created prior
+
+    1. Adding a contact with all parameters <br>
+       Test case: `add n/Spencer p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: No contact is added. Error details shown in the status message.
+
+
+### Editing a contact
+
+1. Editing an existing contact (no duplicate)
+
+   Prerequisites: At least 1 contact needs to be created
+
+    1. Editing a contact with all parameters declared <br>
+       Test case: `edit 1 n/Spencer Wee p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: Parameters of the first contact is updated based on input. Details of the updated contact shown in the status message.
+
+    2. Editing a contact with no parameters declared <br>
+       Test case: `edit 1`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    3. Editing a contact with one parameter declared <br>
+       Test case: `edit 1 n/Spencer Goh`<br>
+       Expected: Declared parameter of the first contact is updated based on input. Details of the updated contact shown in the status message.
+   
+    4. Editing a contact with invalid index <br>
+       Test case: `edit 0 n/Spencer Soh p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    5. Editing a contact with invalid index where index > list size <br>
+       Test case: `edit x n/Spencer Soh p/90008000 e/spencer@gmail.com a/Tampines t/student` (where x is larger than the list size) <br>
+       Expected: No update is made. Error details shown in the status message.
+
+    6. Editing a contact with negative index <br>
+       Test case: `edit -1 n/Spencer Soh p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    7. Editing a contact with no index <br>
+       Test case: `edit n/Spencer Soh p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected:  No update is made. Error details shown in the status message.
+
+    8. Editing a contact with misspelled command <br>
+       Test case: `edt 1 n/Spencer Soh p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: No update is made. Details of the updated contact shown in the status message.
+   
+    9. Editing a contact with non-integer `PHONE NUMBER` <br>
+       Test case: `edit 1 p/abc` <br>
+       Expected: No update is made. Error details shown in the status message.
+
+    10. Editing a contact with invalid format for `EMAIL` <br>
+        Test case: `edit 1 e/spencermail` <br>
+        Expected: No update is made. Error details shown in the status message.
+   
+2. Editing an existing contact (duplicate)
+
+   Prerequisites: Contact with the same name has to be created prior
+
+    1. Editing a contact with all parameters declared <br>
+       Test case: `edit 1 n/Spencer Wee p/90008000 e/spencer@gmail.com a/Tampines t/student`<br>
+       Expected: No update is made. Error details shown in the status message.
+   
+    2. Editing a contact with `NAME` parameter only <br>
+      Test case: `edit 1 n/Spencer Wee`<br>
+      Expected: No update is made. Error details shown in the status message.
+
+### Deleting a contact
+
+1. Deleting a contact while all contacts are being displayed
+
+   Prerequisites: List all persons using the `list` command. Multiple persons in the list. At least 1 contact has to be created prior.
+
+   1. Deleting a contact with valid index <br>
+      Test case: `delete 1`<br>
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
+
+   2. Deleting a contact with invalid index <br>
+      Test case: `delete 0`<br>
+      Expected: No contact is deleted. Error details shown in the status message. 
+
+   3. Deleting a contact with invalid index where index > list size <br>
+      Test case: `delete x` (where x is larger than the list size) <br>
+      Expected: No contact is deleted. Error details shown in the status message.
+
+   4. Deleting a contact with negative index <br>
+      Test case: `delete -1`<br>
+      Expected: No contact is deleted. Error details shown in the status message.
+
+   5. Deleting a contact with no index <br>
+      Test case: `delete`<br>
+      Expected: No contact is deleted. Error details shown in the status message.
+
+   6. Deleting a contact with misspelled command <br>
+      Test case: `delet`<br>
+      Expected: No contact is deleted. Details of the deleted contact shown in the status message.
+
+### Remarks for a contact
+
+1. Adding a remark for an existing contact
+
+   Prerequisites: At least 1 contact with no remarks has to be created
+
+    1. Adding a remark to a contact with valid index <br>
+       Test case: `remark 1 r/This is a test`<br>
+       Expected: Remark is added to the first contact. Details of the contact shown in the status message.
+
+2. Updating a remark for an existing contact
+
+   Prerequisites: At least 1 contact with remarks has to be created
+
+    1. Updating a remark to a contact with valid index <br>
+       Test case: `remark 1 r/This is a test`<br>
+       Expected: Remark of the first contact is updated based on input. Details of the contact shown in the status message.
+
+3. Deleting a remark for an existing contact
+
+   Prerequisites: At least 1 contact with remarks has to be created
+
+    1. Deleting a remark to a contact with valid index <br>
+       Test case: `remark 1`<br>
+       Expected: Remark of the first contact is deleted. Details of the contact shown in the status message.
+
+    2. Deleting a remark to a contact using no parameters<br>
+       Test case: `remark 1 r/`<br>
+       Expected: Remark of the first contact is deleted. Details of the contact shown in the status message.
+
+### Favourites contacts
+
+1. Marking a contact as Favourites
+
+   Prerequisites: At least 1 contact has to be created
+
+    1. Marking a contact as favourite with valid index <br>
+       Test case: `fav 1`<br>
+       Expected: First contact is marked as Favourite. 'Star' (GUI) for the first contact is filled. Details of the contact shown in the status message.
+
+2. Removing a contact as Favourites
+
+   Prerequisites: At least 1 contact that is marked with Favourites has to be created
+
+    1. Removing a contact as favourite with valid index <br>
+       Test case: `fav 1`<br>
+       Expected: First contact is no longer marked as Favourite. 'Star' (GUI) for the first contact is empty. Details of the contact shown in the status message.
+
+### Creating a new group
+
+1. Creating a new group (no duplicates) <br>
+
+   1. Creating a new group with valid syntax <br>
+      Test case: `create g/NUS`<br>
+      Expected: New group is created. Details of the new group shown in the status message.
+   
+   2. Creating a new group with missing parameters <br>
+      Test case: `create g/`<br>
+      Expected: No group is created. Error details shown in the status message.
+   
+   3. Creating a new group with no parameters <br>
+      Test case: `create`<br>
+      Expected: No group is created. Error details shown in the status message.
+
+2. Creating a new group (duplicates) <br>
+
+    1. Creating a new group with valid syntax <br>
+       Test case: `create g/NUS`<br>
+       Expected: No group is created. Error details shown in the status message.
+
+### Assigning contact to group
+
+1. Assigning a contact to an existing group <br>
+
+   Prerequisites: At least 1 contact with no group has to be created. At least 1 group has to be created.
+
+    1. Assigning a contact to an existing group with valid syntax <br>
+       Test case: `assign n/Spencer Soh g/NUS`<br>
+       Expected: Contact Spencer Soh is assigned to Group NUS. Details of the contact shown in the status message.
+
+    2. Assigning a contact to an existing group with invalid `NAME` <br>
+       Test case: `assign n/Spencer g/NUS`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    3. Assigning a contact to an existing group with missing `NAME` <br>
+       Test case: `assign n/ g/NUS`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    4. Assigning a contact to an existing group with no `NAME` <br>
+       Test case: `assign g/NUS`<br>
+       Expected: No update is made. Error details shown in the status message.
+   
+    5. Assigning a contact to an existing group with invalid `Group` <br>
+       Test case: `assign n/Spencer Soh g/NTU`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    6. Assigning a contact to an existing group with missing `Group` <br>
+       Test case: `assign n/Spencer Soh g/`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    7. Assigning a contact to an existing group with no `Group` <br>
+       Test case: `assign n/Spencer Soh`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+### Renaming a group
+
+1. Renaming an existing group (no duplicates)
+
+   Prerequisites: At least 1 group has to be created.
+
+    1. Renaming a group with valid index <br>
+       Test case: `rename 1 g/NUS-SOC`<br>
+       Expected: First group is renamed. Details of the group shown in the status message.
+
+    2. Renaming a group with invalid index <br>
+       Test case: `rename 0 g/NUS-SOC`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    3. Renaming a group with invalid index where index > list size <br>
+       Test case: `rename x g/NUS-SOC` (where x is larger than the list size) <br>
+       Expected: No update is made. Error details shown in the status message.
+
+    4. Renaming a group with negative index <br>
+       Test case: `rename -1 g/NUS-SOC`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    5. Renaming a group a contact with no index <br>
+       Test case: `rename g/NUS-SOC`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+2. Renaming an existing group (duplicates)
+
+   Prerequisites: At least 1 group has to be created. Group with the same name has to be created prior.
+
+    1. Renaming a group with valid index <br>
+       Test case: `rename 1 g/NUS-SOC`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+### Deleting a group
+
+1. Deleting a group
+
+   Prerequisites: At least 1 group has to be created prior.
+
+    1. Deleting a group with valid index <br>
+       Test case: `deleteg 1`<br>
+       Expected: First group is deleted from the list. Details of the deleted group shown in the status message.
+
+    2. Deleting a group with invalid index <br>
+       Test case: `deleteg 0`<br>
+       Expected: No group is deleted. Error details shown in the status message.
+
+    3. Deleting a group with invalid index where index > list size <br>
+       Test case: `deleteg x` (where x is larger than the list size) <br>
+       Expected: No group is deleted. Error details shown in the status message.
+
+    4. Deleting a group with negative index <br>
+       Test case: `deleteg -1`<br>
+       Expected: No group is deleted. Error details shown in the status message.
+
+    5. Deleting a group with no index <br>
+       Test case: `delete`<br>
+       Expected: No group is deleted. Error details shown in the status message.
+
+### Lists
+
+1. Listing all contacts
+
+   Prerequisites: At least 1 contact has to be created prior.
+
+    1. Listing all contacts <br>
+       Test case: `list`<br>
+       Expected: Contacts found in json file should match the contacts in GUI. Details of the action is shown in the status message.
+    
+2. Listing all groups
+
+   Prerequisites: At least 1 group has to be created prior.
+
+    1. Listing all groups <br>
+       Test case: `listgn`<br>
+       Expected: Groups found in json file should match the groups in GUI. Details of the action is shown in the status message.
+
+3. Listing all contact(s) in a specific group with at least 1 contact assigned
+
+   Prerequisites: At least 1 contact with group has to be created prior. At least 1 group has to be created prior.
+
+    1. Listing contact(s) in group with valid syntax<br>
+       Test case: `listpfg g/NUS`<br>
+       Expected: All contacts that is assigned to specified group are displayed. Details of the action is shown in the status message.
+
+    2. Listing contact(s) in group with invalid `GROUP`<br>
+       Test case: `listpfg g/NTU`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    3. Listing contact(s) in group with missing `GROUP`<br>
+       Test case: `listpfg g/`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+    4. Listing contact(s) in group with no `GROUP`<br>
+       Test case: `listpfg`<br>
+       Expected: No update is made. Error details shown in the status message.
+
+4. Listing all contact(s) in a specific group with no contact assigned
+
+    1. Listing contact(s) in group with valid syntax<br>
+       Test case: `listpfg g/NUS-SOC`<br>
+       Expected: Empty list displayed. Details of the action is shown in the status message.
+
+6. Listing all Favourite contact(s)
+
+    1. Listing all Favourite contact(s) with at least 1 Favourite contact<br>
+       Test case: `listfav`<br>
+       Expected: All Favourite contacts are displayed. Details of the action is shown in the status message.
+   
+    2. Listing all Favourite contact(s) with no Favourite contact<br>
+       Test case: `listfav`<br>
+       Expected: Empty list displayed. Details of the action is shown in the status message.
+
+### Find
+
+1. Finding by name
+
+   Prerequisites: At least 1 contact has to be created prior.
+
+    1. Finding contact(s) with 1 keyword <br>
+       Test case: `find Alex`<br>
+       Expected: All contacts with name that contains "Alex" is displayed. Details of the action is shown in the status message.
+
+    2. Finding contact(s) with more than 1 keywords <br>
+       Test case: `find Alex Bernice`<br>
+       Expected: All contacts with name that contains "Alex" or "Bernice" is displayed. Details of the action is shown in the status message.
+
+2. Finding by remarks
+
+   Prerequisites: At least 1 contact with remarks has to be created prior.
+
+    1. Finding contact(s) with 1 keyword <br>
+       Test case: `findr test`<br>
+       Expected: All contacts with remark that contains "test" is displayed. Details of the action is shown in the status message.
+
+    2. Finding contact(s) with more than 1 keywords <br>
+       Test case: `findr test exam`<br>
+       Expected: All contacts with name that contains "test" or "exam" is displayed. Details of the action is shown in the status message.
+
+3. Finding by group name
+
+   Prerequisites: At least 1 contact assigned to a group has to be created prior.
+
+    1. Finding contact(s) with 1 keyword <br>
+       Test case: `findg NUS`<br>
+       Expected: All contacts assigned to group that contains "NUS" is displayed. Details of the action is shown in the status message.
+
+    2. Finding contact(s) with more than 1 keywords <br>
+       Test case: `findg NUS Basketball`<br>
+       Expected: All contacts assigned to group that contains "NUS" or "basketball" is displayed. Details of the action is shown in the status message.
+
+
