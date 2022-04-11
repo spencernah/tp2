@@ -10,41 +10,43 @@ Users can input via a command line interface and access features that help with 
 
 Given below are my contributions to the project.
 
-* **New Feature**: Rename an existing group to another name
-  * What it does: Allows the user to rename an existing group to another group name.
-  * Justification: This feature improves the product significantly because a user can update the group to another suitable group name.
-  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
+* **New Feature**: Find contacts by remarks
+  * What it does: Allows the user search for contacts with remarks that contains specific keywords
+  * Justification: This feature makes it easy for users to sieve through the entire contact list for contacts with certain remarks instead of manually doing it
 
-* **New Feature**: Delete a group name
+* **New Feature**: Find contacts by group name
+  * What it does: Allows the user to search for contacts that are associated to groups with similar names
+  * Justification: This feature makes it easy for users to view contacts from multiple groups that contains similar names
+  
+* **New Feature**: Rename an existing group 
+  * What it does: Allows the user to rename an existing group to another group name.
+  * Justification: This feature enables users can update the group name of an existing group
+
+* **New Feature**: Delete a group 
   * What it does: Allows the user to delete a group name.
-  * Justification: This feature improves the product significantly because a user can clean up the redundant groups.
-  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
+  * Justification: This feature allows users to remove redundant or unwanted groups
 
 
 * **Code contributed**: [RepoSense link](https://nus-tic4002-ay2122s2.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2022-02-11&tabOpen=true&tabType=authorship&tabAuthor=spencernah&tabRepo=AY2122S2-TIC4002-F18-1%2Ftp2%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code&authorshipIsBinaryFileTypeChecked=false)
 
 * **Project management**:
-  * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
+  * Update UG and DG
 
 * **Enhancements to existing features**:
-  * Updated the GUI color scheme (Pull requests [\#33](), [\#34]())
-  * Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests [\#36](), [\#38]())
+  * Refactored command name to better reflect functionality ([\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67))
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `delete` and `find` [\#72]()
-    * Did cosmetic tweaks to existing documentation of features `clear`, `exit`: [\#74]()
+    * Add documentation for the features `findr` and `findg` ([\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67))
+    * Refine wording and phrasing of existing documentation ([\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67))
+    * Improve readability by sorting and grouping of features based on relevancy ([\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67))
+    * Update the entire Command summary section ([\#67](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/67))
+
   * Developer Guide:
-    * Added implementation details of the `delete` feature.
+    * Refine wording and phrasing of existing documentation ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
+    * Add user stories to ensure that all features have been documented ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
+    * Added additional test cases for Manual Testing
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments): [\#12](), [\#32](), [\#19](), [\#42]()
-  * Contributed to forum discussions (examples: [1](), [2](), [3](), [4]())
-  * Reported bugs and suggestions for other teams in the class (examples: [1](), [2](), [3]())
-  * Some parts of the history feature I added was adopted by several other class mates ([1](), [2]())
+  * PRs reviewed: ([\#69](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/69), [\#70](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/70), [\#79](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/79), [\#81](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/81))
 
-* **Tools**:
-  * Integrated a third party library (Natty) to the project ([\#42]())
-  * Integrated a new Github plugin (CircleCI) to the team repo
-
-* _{you can add/remove categories in the list above}_
