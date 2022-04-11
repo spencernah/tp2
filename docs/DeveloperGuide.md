@@ -290,21 +290,31 @@ Evolve: Better searchability (search based on certain criteria) Provide alternat
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                               | So that I can…​                                                        |
-| -------- | ------------------------------------------ |--------------------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions                     | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person                           | keep record of the person contact                                      |
-| `* * *`  | user                                       | delete a person                            | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | create different contact groups            | sort the contacts into groups for different purposes need              |
-| `* * *`  | user                                       | list how many groups in my address book    | edit or delete redundant groups                                        |
-| `* * *`  | user                                       | assign a contact to an existing group      | find different contacts under a group                                  |
-| `* * *`  | user                                       | list all the people in a given group       | know who is in that group                                              |
-| `* * *`  | user                                       | delete a group                             | remove the group that is no longer needed                              |
-| `* * *`  | user                                       | rename a group                             | change the group name without moving person to another group           |
-| `* * *`  | user                                       | find a person by name                      | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | add a remark to a contact                  | identify a person quickly and easily                                   |
-| `* *`    | linux user                                 | close the program using keywords like quit | it is similar to most of the exit command I used.                      |
-| `*`      | user with many persons in the address book | sort persons by name                       | locate a person easily                                                 |
+| Priority | As a …​                                 | I want to …​                                                                                | So that I…​                                                       |
+| -------- | ------------------------------------------ |------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| `* * *`  | new user                                   | see usage instructions                                                                         | can refer to instructions when I forget how to use the App           |
+| `* * *`  | user                                       | add a new contact                                                                              | can keep record of the person contact                                |
+| `* * *`  | user                                       | record the basic details of a person such as name, address, phone number and email             | do not remember these details by heart                               |
+| `* * *`  | user                                       | delete an existing contact                                                                     | can remove contacts that I no longer need                            |
+| `* *`    | user                                       | delete multiple existing contact                                                               | do not need to do it one-by-one                                      |
+| `* * *`  | user                                       | edit an existing contact                                                                       | can update the contact when there are changes                        |
+| `* *`    | user                                       | add a remark to an existing contact                                                            | can add notes related to that contact                                |
+| `* *`    | user                                       | update a remark to an existing contact                                                         | can make changes to existing remarks of a contact                    |
+| `* *`    | user                                       | delete a remark to an existing contact                                                         | can remove any existing remarks of a contact                         |
+| `* *`    | user                                       | favourite an existing contact                                                                  | can differentiate the contact from others                            |
+| `* * *`  | user                                       | create different contact groups                                                                | can group the contacts based different purposes and needs            |
+| `* * *`  | user                                       | assign an existing contact to an existing group                                                | can group the contacts based different purposes and needs            |
+| `* *`    | user                                       | rename an existing group                                                                       | can make update the group name when needed                           |
+| `* * *`  | user                                       | delete a group                                                                                 | can remove the group that is no longer needed                        |
+| `* * *`  | user                                       | view a list of all existing contacts                                                           | can review the contacts or refer to the contacts' details            |
+| `* * *`  | user                                       | view a list of existing groups                                                                 | can review, update existing ones or delete redundant ones            |
+| `* *`    | user                                       | view all contact(s) associated to a specific group                                             | know who is in that group                                            |
+| `* *`    | user                                       | view all favourite contact(s)                                                                  | can quickly access my favourite contacts                             |
+| `* * *`  | user                                       | find a contact by name                                                                         | can locate contact(s) without having to go through the entire list   |
+| `* *`    | user                                       | find a contact by content of the remarks                                                       | can locate contact(s) with certain remarks                           |
+| `* *`    | user                                       | find a contact by the group name                                                               | can locate contact(s) with similar group names                       |
+| `* *`    | linux user                                 | close the program using keywords like quit                                                     | can easily terminate the app                                         |
+| `*`      | user                                       | sort persons by name                                                                           | can organise my contacts                                             |
 
 *{More to be added}*
 
