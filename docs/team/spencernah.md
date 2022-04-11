@@ -44,8 +44,8 @@ Given below are my contributions to the project.
 
   * Developer Guide:
     * Refine wording and phrasing of existing documentation ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
-    * Add user stories to ensure that all features have been documented ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
-    * Added additional test cases for Manual Testing
+    * Update user stories to ensure that all features have been documented ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
+    * Maintain test cases for Manual Testing to ensure all features have been tested ([\#82](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/82))
 
 * **Community**:
   * PRs reviewed: ([\#69](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/69), [\#70](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/70), [\#79](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/79), [\#81](https://github.com/AY2122S2-TIC4002-F18-1/tp2/pull/81))
