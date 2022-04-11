@@ -44,6 +44,10 @@ public class FindRemarkCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
+
+        if (!(other instanceof FindRemarkCommand)) {
+            return false;
+        }
         return other == this // short circuit if same object
                 || (other instanceof FindRemarkCommand // instanceof handles nulls
                 && predicate.equals(((FindRemarkCommand) other).predicate)); // state check

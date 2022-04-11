@@ -24,10 +24,10 @@ import seedu.address.model.person.Person;
  */
 public class DeleteCommandTest {
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         Person personToDelete = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
         DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_PERSON);
 
@@ -41,6 +41,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
         DeleteCommand deleteCommand = new DeleteCommand(outOfBoundIndex);
 
@@ -49,6 +50,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_validIndexFilteredList_success() {
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         Person personToDelete = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
@@ -65,6 +67,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
+        Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         Index outOfBoundIndex = INDEX_SECOND_PERSON;
@@ -78,6 +81,7 @@ public class DeleteCommandTest {
 
     @Test
     public void equals() {
+
         DeleteCommand deleteFirstCommand = new DeleteCommand(INDEX_FIRST_PERSON);
         DeleteCommand deleteSecondCommand = new DeleteCommand(INDEX_SECOND_PERSON);
 

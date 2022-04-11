@@ -76,14 +76,14 @@ public class RemarkCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        // short circuit if same object
-        if (other == this) {
-            return true;
-        }
-
         // instanceof handles nulls
         if (!(other instanceof RemarkCommand)) {
             return false;
+        }
+
+        // short circuit if same object
+        if (other == this) {
+            return true;
         }
 
         // state check

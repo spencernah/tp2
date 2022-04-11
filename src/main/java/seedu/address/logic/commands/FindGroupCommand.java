@@ -45,6 +45,10 @@ public class FindGroupCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
+
+        if (!(other instanceof FindGroupCommand)) {
+            return false;
+        }
         return other == this // short circuit if same object
                 || (other instanceof FindGroupCommand // instanceof handles nulls
                 && predicate.equals(((FindGroupCommand) other).predicate)); // state check

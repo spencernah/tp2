@@ -132,13 +132,13 @@ public class Person {
         }
 
         Person otherPerson = (Person) other;
-        return otherPerson.getName().equals(getName())
-                && otherPerson.getPhone().equals(getPhone())
-                && otherPerson.getEmail().equals(getEmail())
-                && otherPerson.getAddress().equals(getAddress())
-                && otherPerson.getTags().equals(getTags())
-                && otherPerson.getGroup().equals(getGroup())
-                && otherPerson.getFavourite().equals(getFavourite());
+        return otherPerson.getName().toString().equals(getName().toString())
+                && otherPerson.getPhone().toString().equals(getPhone().toString())
+                && otherPerson.getEmail().toString().equals(getEmail().toString())
+                && otherPerson.getAddress().toString().equals(getAddress().toString())
+                && otherPerson.getTags().toString().equals(getTags().toString())
+                && otherPerson.getGroup().toString().equals(getGroup().toString())
+                && otherPerson.getFavourite().toString().equals(getFavourite().toString());
     }
 
     @Override

@@ -12,12 +12,14 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.testutil.PersonBuilder.DEFAULT_GROUP;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Person;
 
 /**
@@ -74,7 +76,9 @@ public class TypicalPersons {
      */
     public static AddressBook getTypicalAddressBook() {
         AddressBook ab = new AddressBook();
+        Group defaultGroup = new Group().setGroupName(DEFAULT_GROUP);
         for (Person person : getTypicalPersons()) {
+            person.setGroup(defaultGroup);
             ab.addPerson(person);
         }
         return ab;
