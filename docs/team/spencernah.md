@@ -11,19 +11,19 @@ Users can input via a command line interface and access features that help with 
 Given below are my contributions to the project.
 
 * **New Feature**: Find contacts by remarks
-  * What it does: Allows the user search for contacts with remarks that contains specific keywords
+  * What it does: Allow the user search for contacts with remarks that contains specific keywords
   * Justification: This feature makes it easy for users to sieve through the entire contact list for contacts with certain remarks instead of manually doing it
 
 * **New Feature**: Find contacts by group name
-  * What it does: Allows the user to search for contacts that are associated to groups with similar names
+  * What it does: Allow the user to search for contacts that are associated to groups with similar names
   * Justification: This feature makes it easy for users to view contacts from multiple groups that contains similar names
   
 * **New Feature**: Rename an existing group 
-  * What it does: Allows the user to rename an existing group to another group name.
+  * What it does: Allow the user to rename an existing group to another group name.
   * Justification: This feature enables users can update the group name of an existing group
 
 * **New Feature**: Delete a group 
-  * What it does: Allows the user to delete a group name.
+  * What it does: Allow the user to delete a group name.
   * Justification: This feature allows users to remove redundant or unwanted groups
 
 
